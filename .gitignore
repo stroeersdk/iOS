@@ -1,0 +1,10 @@
+# Swift Package
+.build/
+.swiftpm/
+
+# macOS / Xcode noise
+.DS_Store
+xcuserdata/
+
+# Optional for libs
+Package.resolved
