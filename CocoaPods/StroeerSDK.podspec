@@ -1,10 +1,10 @@
 Pod::Spec.new do |spec|
   spec.name               = 'StroeerSDK'
-  spec.version            = '1.0.0-rc.1'
+  spec.version            = '1.0.0-rc.2'
   spec.summary            = 'A lightweight SDK that helps publishers maximize ad revenue across mobile websites and apps.'
   spec.license            = {
     :type => 'Commercial',
-    :file => 'stroeer-sdk-1.0.0-rc.1/StroeerSDK/LICENSE'
+    :file => 'stroeer-sdk-1.0.0-rc.2/StroeerSDK/LICENSE'
   }
   spec.description        = 'We provide publishers with a platform that maximizes ad monetization, ensuring every impression is optimized for top-tier revenue performance.'
   spec.homepage           = 'https://yieldlove.com/'
@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
     'Stroeer Labs' => 'stroeerlabs@adscale.co.nz'
   }
   spec.source             = {
-    :http => 'https://github.com/stroeersdk/iOS/releases/download/1.0.0-rc.1/stroeer-sdk-1.0.0-rc.1.zip'
+    :http => 'https://github.com/stroeersdk/iOS/releases/download/1.0.0-rc.2/stroeer-sdk-1.0.0-rc.2.zip'
   }
 
   spec.requires_arc       = true
@@ -25,14 +25,14 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Core' do |core|
     core.vendored_frameworks = [
-      'stroeer-sdk-1.0.0-rc.1/StroeerSDK/Frameworks/StroeerSDK.xcframework'
+      'stroeer-sdk-1.0.0-rc.2/StroeerSDK/Frameworks/StroeerSDK.xcframework'
     ]
 
     core.resource_bundles = {
       'StroeerSDK' => [
-        'stroeer-sdk-1.0.0-rc.1/StroeerSDK/Resources/Core/dashboard.html',
-        'stroeer-sdk-1.0.0-rc.1/StroeerSDK/Resources/Core/debuginfo.html',
-        'stroeer-sdk-1.0.0-rc.1/StroeerSDK/Resources/Core/PrivacyInfo.xcprivacy'
+        'stroeer-sdk-1.0.0-rc.2/StroeerSDK/Resources/Core/dashboard.html',
+        'stroeer-sdk-1.0.0-rc.2/StroeerSDK/Resources/Core/debuginfo.html',
+        'stroeer-sdk-1.0.0-rc.2/StroeerSDK/Resources/Core/PrivacyInfo.xcprivacy'
       ]
     }
 
@@ -42,12 +42,12 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Consent' do |consent|
     consent.vendored_frameworks = [
-      'stroeer-sdk-1.0.0-rc.1/StroeerSDK/Frameworks/StroeerSDK_Consent.xcframework'
+      'stroeer-sdk-1.0.0-rc.2/StroeerSDK/Frameworks/StroeerSDK_Consent.xcframework'
     ]
 
     consent.resource_bundles = {
       'StroeerSDKConsent' => [
-        'stroeer-sdk-1.0.0-rc.1/StroeerSDK/Resources/Consent/PrivacyInfo.xcprivacy'
+        'stroeer-sdk-1.0.0-rc.2/StroeerSDK/Resources/Consent/PrivacyInfo.xcprivacy'
       ]
     }
 
