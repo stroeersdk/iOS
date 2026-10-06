@@ -13,12 +13,20 @@ import StroeerSDK
 struct BannerViewRepresentable: UIViewControllerRepresentable {
     
     let slotId: String
-    let onAdSize: (CGSize) -> Void
+    let contentUrl: String?
+    let customTargeting: [String: String]
+    
+    init(slotId: String, contentUrl: String? = nil, customTargeting: [String: String] = [:]) {
+        self.slotId = slotId
+        self.contentUrl = contentUrl
+        self.customTargeting = customTargeting
+    }
 
     func makeUIViewController(context: Context) -> BannerViewController {
         let vc = BannerViewController()
         vc.slotId = slotId
-        vc.onAdSize = onAdSize
+        vc.contentUrl = contentUrl
+        vc.customTargeting = customTargeting
         return vc
     }
 

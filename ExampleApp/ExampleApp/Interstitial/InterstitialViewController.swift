@@ -25,8 +25,19 @@ class InterstitialViewController: UIViewController {
     }
     
     func loadInterstitialAd() {
-        self.delegate = InterstitialViewDelegate(viewController: self, errorCallback: onError, isLoaded: isLoaded)
-        self.interstitialView = Stroeer.instance.interstitialAd(adSlotId: adSlotId, interstitialDelegate: delegate)
+        let delegate = InterstitialViewDelegate(viewController: self, errorCallback: onError, isLoaded: isLoaded)
+        self.delegate = delegate
+        let interstitialView = StroeerInterstitialView(adSlotId: adSlotId, publisherDelegate: delegate)
+
+        interstitialView.contentUrl = "https://stroeer.com/"
+
+        interstitialView.customTargeting = [
+            "section": "sports",
+            "logged_in": "true"
+        ]
+
+        self.interstitialView = interstitialView
+        interstitialView.load()
     }
     
     deinit {

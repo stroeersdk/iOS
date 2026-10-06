@@ -13,6 +13,8 @@ class BannerViewController: UIViewController, StroeerBannerViewDelegate {
 
     var slotId: String = ""
     var onAdSize: ((CGSize) -> Void)?
+    var contentUrl: String? = nil
+    var customTargeting: [String: String] = [:]
 
     private var bannerView: StroeerBannerView?
 
@@ -23,13 +25,18 @@ class BannerViewController: UIViewController, StroeerBannerViewDelegate {
 
         print("[BANNER_LOAD] slot=\(slotId)")
 
-        let bannerView = Stroeer.instance.bannerAd(
+        let bannerView = StroeerBannerView(
             adSlotId: slotId,
-            viewController: self,
-            delegate: self
+            publisherViewController: self,
+            publisherDelegate: self
         )
+        
         self.bannerView = bannerView
+        bannerView.contentUrl = contentUrl
+        bannerView.customTargeting = customTargeting
         view.addSubview(bannerView)
+        
+        bannerView.load()
     }
 
     func getGAMRequest() -> AdManagerRequest {
@@ -40,7 +47,7 @@ class BannerViewController: UIViewController, StroeerBannerViewDelegate {
 
     func bannerViewDidReceiveAd(_ bannerView: StroeerBannerView) {
         print("banner size = \(bannerView.getBannerSize())")
-        onAdSize?(bannerView.getBannerSize())
+        print("banner size = \(bannerView.getBannerSize())")
     }
 
     func bannerView(_ bannerView: StroeerBannerView, didFailToReceiveAdWithError error: Error) {

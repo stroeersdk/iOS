@@ -10,8 +10,6 @@ import SwiftUI
 
 struct BannerView : View
 {
-    @State private var size: CGSize = .zero
-    
     var body: some View {
         VStack {
             HStack {
@@ -21,12 +19,10 @@ struct BannerView : View
             Spacer()
             
             BannerViewRepresentable(
-                slotId: "banner",
-                onAdSize: { size in
-                    self.size = size
-                }
+                slotId: "b2",
+                //contentUrl: "localContentUrl.com",
+                customTargeting : ["localTarget": "localValue"]
             )
-            .frame(width: size.width, height: size.height)
             
             Spacer()
         }
