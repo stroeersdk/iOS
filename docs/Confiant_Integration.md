@@ -50,6 +50,21 @@ You do not need to manually pass individual banner views to Confiant.
 
 Contact the Ströer team if you require Confiant integration.
 
+### Confiant linker flag
+
+When using `StroeerSDK_Confiant`, add:
+
+```text
+-ObjC
+```
+
+to the application target under:
+
+**Build Settings → Other Linker Flags**
+
+`-ObjC` is required for the Confiant integration to be loaded correctly.
+
+
 ---
 
 ## Installation
