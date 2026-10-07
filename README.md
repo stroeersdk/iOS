@@ -13,13 +13,13 @@ For interstitial, rewarded, targeting, consent, privacy, debugging, and lifecycl
 ## Requirements
 
 - iOS 15.0 or newer
-- Swift Package Manager or CocoaPods
+- Swift Package Manager or Cocoapods
 
 Refer to the integration guide for currently supported dependency versions and third-party SDK compatibility.
 
 ## Installation
 
-The SDK can be integrated using Swift Package Manager or CocoaPods.
+The SDK can be integrated using Swift Package Manager or Cocoapods.
 
 ---
 
@@ -70,9 +70,9 @@ to your application target under:
 
 ---
 
-## CocoaPods
+## Cocoapods
 
-The SDK is also available through CocoaPods.
+The SDK is also available through Cocoapods.
 
 ### Core SDK and Consent
 
@@ -90,7 +90,7 @@ If your integration also requires Confiant, use:
 
 ```ruby
 pod 'StroeerSDK',
-  :podspec => 'https://raw.githubusercontent.com/stroeersdk/iOS/main/CocoaPods/StroeerSDK-Confiant.podspec',
+  :podspec => 'https://raw.githubusercontent.com/stroeersdk/iOS/main/Cocoapods/StroeerSDK-Confiant.podspec',
   :subspecs => [
           'Confiant'
         ]
