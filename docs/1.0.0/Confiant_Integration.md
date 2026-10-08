@@ -203,9 +203,8 @@ ConfiantLoader.shared.initialize(
 ## Complete setup example
 
 ```swift
-import UIKit
-import StroeerSDK
-import StroeerSDK_Confiant
+UIKit
+StroeerSDK
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
