@@ -19,7 +19,7 @@ struct BannerView : View
             Spacer()
             
             BannerViewRepresentable(
-                slotId: "b2",
+                slotId: "banner",
                 //contentUrl: "localContentUrl.com",
                 customTargeting : ["localTarget": "localValue"]
             )

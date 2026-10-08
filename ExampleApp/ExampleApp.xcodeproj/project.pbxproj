@@ -387,7 +387,7 @@
 			repositoryURL = "https://github.com/stroeersdk/iOS";
 			requirement = {
 				kind = exactVersion;
-				version = "1.0.0-rc.1";
+				version = "1.0.0-rc.5";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
