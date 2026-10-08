@@ -118,17 +118,6 @@ Do not mix the normal public Ströer podspec and the Confiant-enabled podspec fo
 
 ---
 
-## Import
-
-Import the Ströer Core and Confiant modules:
-
-```swift
-import StroeerSDK
-import StroeerSDK_Confiant
-```
-
----
-
 ## Initialize the Ströer SDK
 
 Initialize the normal Ströer SDK first:
