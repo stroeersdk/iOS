@@ -43,7 +43,7 @@ The public Ströer CocoaPods specification contains both Core and Consent.
 
 ```ruby
 pod 'StroeerSDK',
-    :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/StroeerSDK.podspec',
+    :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/1.0.0/StroeerSDK.podspec',
     :subspecs => ['Consent']
 ```
 

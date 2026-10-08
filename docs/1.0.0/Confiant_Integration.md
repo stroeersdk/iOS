@@ -102,7 +102,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://cdn.confiant-integrations.net/backend-integrations/in-app/releases/ios/podspecs.git'
 
 pod 'StroeerSDK',
-    :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/StroeerSDK-Confiant.podspec',
+    :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/1.0.0/StroeerSDK-Confiant.podspec',
     :subspecs => ['Confiant']
 ```
 

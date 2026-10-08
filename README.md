@@ -94,7 +94,7 @@ If your application uses Confiant, use the Confiant podspec:
 
 ```ruby
 pod 'StroeerSDK',
-  :podspec => 'https://raw.githubusercontent.com/stroeersdk/iOS/main/cocoapods/StroeerSDK-Confiant.podspec',
+  :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/1.0.0/StroeerSDK-Confiant.podspec',
   :subspecs => [
     'Confiant'
   ]

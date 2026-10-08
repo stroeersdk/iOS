@@ -48,7 +48,7 @@ Add the Ströer SDK to your `Podfile`:
 
 ```ruby
 pod 'StroeerSDK',
-    :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/StroeerSDK.podspec'
+    :podspec => 'https://stroeersdk.github.io/iOS/cocoapods/1.0.0/StroeerSDK.podspec'
 ```
 
 Then run:
