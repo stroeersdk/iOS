@@ -6,10 +6,9 @@ Optional modules are available for consent management (CMP) and ad-quality prote
 
 ## Documentation
 
-- [iOS integration guide](docs/Integration.md)
-- [CMP integration guide](docs/CMP_Integration.md)
-- [Confiant integration guide](docs/Confiant_Integration.md)
-- [Documentation for older SDK versions](docs/Integration.md#older-sdk-versions)
+- [iOS integration guide](docs/1.0.0/Integration.md)
+- [CMP integration guide](docs/1.0.0/CMP_Integration.md)
+- [Confiant integration guide](docs/1.0.0/Confiant_Integration.md)
 - [Example application](ExampleApp)
 
 ## Requirements
