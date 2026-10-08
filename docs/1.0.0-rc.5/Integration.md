@@ -535,20 +535,3 @@ The actual `APPLICATION_NAME` and `PUBLISHER_CALL_STRING` values are provided by
 - [Confiant Integration](./Confiant_Integration.md)
 
 For questions about your application configuration, publisher call strings, or available ad placements, please contact your Ströer account manager.
-
-## Older SDK Versions
-
-**Looking for documentation for an older SDK version?**  
-This document always describes the latest SDK version. To view the integration documentation for a previous release, open the required [iOS SDK release tag](https://github.com/stroeersdk/iOS/tags) and navigate to `docs/Integration.md`.
-
-You can also access a specific version directly using:
-
-```text
- https://github.com/stroeersdk/iOS/blob/<VERSION>/docs/Integration.md
-```
-
-For example:
-
-```text
- https://github.com/stroeersdk/iOS/blob/1.0.0/docs/Integration.md
-```
