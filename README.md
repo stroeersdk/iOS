@@ -317,13 +317,6 @@ For consent collection, Privacy Manager, consent callbacks, clearing consent dat
 
 ## Confiant
 
-When using the optional Confiant module, import:
-
-```swift
-import StroeerSDK
-import StroeerSDK_Confiant
-```
-
 Initialize Confiant once with the property ID provided for your application:
 
 ```swift
