@@ -1,0 +1,11 @@
+framework module StroeerSDK {
+  umbrella header "StroeerSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module StroeerSDK.Swift {
+  header "StroeerSDK-Swift.h"
+  requires objc
+}

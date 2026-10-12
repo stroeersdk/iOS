@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroeer SDK - Debug Info</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+        nav { background: #1565c0; padding: 0 16px; display: flex; align-items: center; height: 48px; }
+        nav .brand { color: #fff; font-weight: 700; font-size: 16px; margin-right: 24px; text-decoration: none; }
+        nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; padding: 0 12px; height: 48px; display: flex; align-items: center; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,.1); }
+        nav a.active { color: #fff; border-bottom: 2px solid #fff; }
+        .content { padding: 16px; }
+        h1 { font-size: 20px; margin-bottom: 12px; }
+        .empty { text-align: center; padding: 40px; color: #999; }
+        .slot { background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.12); margin-bottom: 16px; overflow: hidden; }
+        .slot-header { background: #37474f; color: #fff; padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .slot-header h2 { font-size: 15px; font-weight: 600; }
+        .slot-header .badge { background: rgba(255,255,255,.2); border-radius: 12px; padding: 2px 10px; font-size: 12px; }
+        .slot-body { padding: 16px; display: none; }
+        .slot.open .slot-body { display: block; }
+        .section { margin-bottom: 14px; }
+        .section-title { font-size: 13px; font-weight: 700; color: #1565c0; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        td { padding: 3px 8px; vertical-align: top; }
+        td:first-child { font-weight: 600; color: #555; width: 40%; white-space: nowrap; }
+        td:last-child { word-break: break-all; }
+        tr:nth-child(even) { background: #fafafa; }
+        .sdk-step { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+        .sdk-step-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .sdk-step-header .type { font-weight: 700; font-size: 13px; }
+        .sdk-step-header .type.Prebid { color: #e65100; }
+        .sdk-step-header .type.GAM { color: #2e7d32; }
+        .sdk-step-header .type.Gravite { color: #6a1b9a; }
+        .sdk-step-header .desc { font-size: 12px; color: #666; }
+        .sdk-step-header .time { font-size: 11px; color: #999; }
+        .kv-table { margin-top: 4px; }
+        .json-toggle { font-size: 12px; color: #1565c0; cursor: pointer; margin-top: 4px; display: inline-block; }
+        .json-block { display: none; background: #263238; color: #e0e0e0; padding: 8px; border-radius: 4px; margin-top: 4px; font-family: monospace; font-size: 11px; white-space: pre-wrap; word-break: break-all; max-height: 300px; overflow: auto; }
+        .refresh-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        button { background: #1565c0; color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+        button:active { background: #0d47a1; }
+        .count { font-size: 13px; color: #666; }
+        .on { color: #2e7d32; }
+        .off { color: #c62828; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="brand" href="/admin">Stroeer SDK</a>
+        <a href="/admin">Settings</a>
+        <a href="/debuginfo" class="active">Debug Info</a>
+    </nav>
+    <div class="content">
+        <h1>Debug Info</h1>
+        <div class="refresh-bar">
+            <span class="count" id="count"></span>
+            <button onclick="loadData()">Refresh</button>
+        </div>
+        <div id="content"><div class="empty">Loading...</div></div>
+    </div>
+
+    <script>
+        function esc(s) {
+            var d = document.createElement('div');
+            d.textContent = s;
+            return d.innerHTML;
+        }
+
+        function kvTable(map, prettyJsonKeys) {
+            if (!map || Object.keys(map).length === 0) return '';
+            var jsonKeys = prettyJsonKeys || [];
+            var h = '<table class="kv-table">';
+            var keys = Object.keys(map).sort();
+            for (var i = 0; i < keys.length; i++) {
+                var val = String(map[keys[i]] || '');
+                if (jsonKeys.indexOf(keys[i]) !== -1) {
+                    val = prettyJson(val);
+                    h += '<tr><td colspan="2" style="font-weight:600;color:#555;padding-bottom:0">' + esc(keys[i]) + '</td></tr>';
+                    h += '<tr><td colspan="2" style="padding-top:2px"><pre style="margin:0;font-size:11px;white-space:pre-wrap;word-break:break-all;background:#263238;color:#e0e0e0;padding:8px;border-radius:4px;max-height:300px;overflow:auto">' + esc(val) + '</pre></td></tr>';
+                } else {
+                    h += '<tr><td>' + esc(keys[i]) + '</td><td>' + esc(val) + '</td></tr>';
+                }
+            }
+            return h + '</table>';
+        }
+
+        var jsonCounter = 0;
+        function prettyJson(text) {
+            if (!text) return '';
+            try { return JSON.stringify(JSON.parse(text), null, 2); } catch (e) { return text; }
+        }
+
+        function jsonBlock(label, text, pretty) {
+            if (!text) return '';
+            var display = pretty ? prettyJson(text) : text;
+            var id = 'json_' + (jsonCounter++);
+            return '<span class="json-toggle" onclick="var e=document.getElementById(\'' + id + '\');e.style.display=e.style.display===\'block\'?\'none\':\'block\'">' + esc(label) + '</span>' +
+                   '<div class="json-block" id="' + id + '">' + esc(display) + '</div>';
+        }
+
+        function getWinner(info) {
+            if (!info.sdkDebugInfos) return '';
+            var steps = info.sdkDebugInfos;
+            var hasPrebidRendered = steps.some(function(s) { return s.description === 'Rendered by Prebid'; });
+            if (hasPrebidRendered) return 'Prebid';
+            var hasGamReceived = steps.some(function(s) { return s.description === 'Received from GAM'; });
+            if (hasGamReceived) return 'GAM';
+            // Android fallback: legacy 'Delivered Ad' step
+            for (var i = steps.length - 1; i >= 0; i--) {
+                var sdk = steps[i];
+                if (sdk.description === 'Delivered Ad') {
+                    var result = sdk.keyValues && sdk.keyValues['_result'];
+                    if (result && result.toLowerCase().indexOf('prebid') !== -1) return 'Prebid';
+                    return 'GAM';
+                }
+            }
+            if (info.adSubSource && info.adSubSource !== 'Unknown') return info.adSubSource;
+            if (info.adSource && info.adSource !== 'Unknown') return info.adSource;
+            return '';
+        }
+
+        function renderSlot(info, index) {
+            var winner = getWinner(info);
+            var h = '<div class="slot' + (index === 0 ? ' open' : '') + '">';
+            h += '<div class="slot-header" onclick="this.parentElement.classList.toggle(\'open\')">';
+            h += '<h2>' + esc(info.adSlotId || 'Unknown Slot') + '</h2>';
+            var badges = '';
+            if (info.servedInTime > 0) badges += '<span class="badge">' + info.servedInTime + 'ms</span> ';
+            if (winner) badges += '<span class="badge">' + esc(winner) + '</span>';
+            h += '<div>' + badges + '</div>';
+            h += '</div>';
+            h += '<div class="slot-body">';
+
+            h += '<div class="section"><div class="section-title">Ad Slot</div><table>';
+            h += '<tr><td>Ad Unit ID</td><td>' + esc(info.adUnitId || '') + '</td></tr>';
+            h += '<tr><td>Ad Sizes</td><td>' + esc(info.adSizes || '') + '</td></tr>';
+            h += '<tr><td>Served In</td><td>' + (info.servedInTime || 0) + ' ms</td></tr>';
+            h += '<tr><td>Auto Refresh</td><td>' + (info.autoRefreshEnabled ? '<span class="on">ON</span>' : '<span class="off">OFF</span>') + '</td></tr>';
+            h += '</table></div>';
+
+            h += '<div class="section"><div class="section-title">Prebid</div><table>';
+            h += '<tr><td>Active</td><td>' + (info.prebidActive ? '<span class="on">YES</span>' : '<span class="off">NO</span>') + '</td></tr>';
+            h += '<tr><td>Config ID</td><td>' + esc(info.prebidConfigId || '') + '</td></tr>';
+            h += '</table></div>';
+
+            if (info.customTargeting && Object.keys(info.customTargeting).length > 0) {
+                h += '<div class="section"><div class="section-title">Custom Targeting</div>';
+                h += kvTable(info.customTargeting);
+                h += '</div>';
+            }
+
+            if (info.sdkDebugInfos && info.sdkDebugInfos.length > 0) {
+                var sorted = info.sdkDebugInfos.slice().sort(function(a, b) { return (b.createdDate || 0) - (a.createdDate || 0); });
+                h += '<div class="section"><div class="section-title">SDK Pipeline (' + sorted.length + ' steps)</div>';
+                for (var i = 0; i < sorted.length; i++) {
+                    var sdk = sorted[i];
+                    var isGam = sdk.sdkType === 'GAM';
+                    h += '<div class="sdk-step">';
+                    h += '<div class="sdk-step-header">';
+                    h += '<span class="type ' + esc(sdk.sdkType) + '">' + esc(sdk.sdkType) + '</span>';
+                    h += '<span class="desc">' + esc(sdk.description || '') + '</span>';
+                    if (sdk.createdDate) h += '<span class="time">' + new Date(sdk.createdDate).toLocaleTimeString() + '</span>';
+                    h += '</div>';
+                    h += kvTable(sdk.keyValues, isGam ? ['responseJson'] : []);
+                    h += jsonBlock('Show Request JSON', sdk.requestJson, isGam);
+                    h += jsonBlock('Show Response JSON', sdk.responseJson, isGam);
+                    h += '</div>';
+                }
+                h += '</div>';
+            }
+
+            h += '</div></div>';
+            return h;
+        }
+
+        function loadData() {
+            fetch('/api/debuginfo')
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    var el = document.getElementById('content');
+                    var countEl = document.getElementById('count');
+                    if (!data || data.length === 0) {
+                        el.innerHTML = '<div class="empty">No debug info available. Enable inspection mode and load some ads.</div>';
+                        countEl.textContent = '0 ad slots';
+                        return;
+                    }
+                    countEl.textContent = data.length + ' ad slot' + (data.length !== 1 ? 's' : '');
+                    data.sort(function(a, b) {
+                        var nameA = (a.adSlotId || '').toLowerCase();
+                        var nameB = (b.adSlotId || '').toLowerCase();
+                        return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+                    });
+                    var html = '';
+                    for (var i = 0; i < data.length; i++) html += renderSlot(data[i], i);
+                    el.innerHTML = html;
+                })
+                .catch(function(err) {
+                    document.getElementById('content').innerHTML = '<div class="empty">Error loading debug info: ' + err + '</div>';
+                });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

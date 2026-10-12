@@ -1,0 +1,145 @@
+//
+// Copyright 2018-2025 Prebid.org, Inc.
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+// http://www.apache.org/licenses/LICENSE-2.0
+
+// Unless required by applicable law or agreed to in writing, software
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+    
+
+import Foundation
+
+struct JSONObject<Key: RawRepresentable> where Key.RawValue == String {
+    private(set) var dict: [String : Any]
+    
+    init() {
+        dict = [:]
+    }
+    
+    init(_ dict: [String : Any]) {
+        self.dict = dict
+    }
+    
+    // MARK: Single Value
+    
+    subscript(_ key: Key) -> NSNumber? {
+        get {
+            dict[key.rawValue] as? NSNumber
+        }
+        
+        set {
+            dict[key.rawValue] = newValue
+        }
+    }
+    
+    subscript(_ key: Key) -> String? {
+        get {
+            dict[key.rawValue] as? String
+        }
+        
+        set {
+            dict[key.rawValue] = newValue
+        }
+    }
+    
+    subscript<T: PBMJsonCodable>(_ key: Key) -> T? {
+        get {
+            (dict[key.rawValue] as? [String : Any]).flatMap { CustomModelObjects.instantiate(json: $0) }
+        }
+
+        set {
+            let childDict = newValue?.jsonDictionary
+            dict[key.rawValue] = (childDict?.isEmpty == true) ? nil : childDict
+        }
+    }
+    
+    // MARK: Array
+    
+    @_disfavoredOverload
+    subscript<T>(_ key: Key) -> [T]? {
+        get {
+            (dict[key.rawValue] as? [Any])?.compactMap { $0 as? T }
+        }
+        
+        set {
+            dict[key.rawValue] = newValue
+        }
+    }
+    
+    subscript<T: PBMJsonCodable>(_ key: Key) -> [T]? {
+        get {
+            (dict[key.rawValue] as? [Any])?.compactMap {
+                ($0 as? [String : Any]).flatMap { CustomModelObjects.instantiate(json: $0) }
+            }
+        }
+        
+        set {
+            dict[key.rawValue] = newValue?.compactMap { $0.jsonDictionary }
+        }
+    }
+    
+    // MARK: Object
+    
+    subscript<T>(_ key: Key) -> [String : T]? {
+        get {
+            (dict[key.rawValue] as? [String : Any])?.compactMapValues { $0 as? T }
+        }
+        
+        set {
+            dict[key.rawValue] = newValue
+        }
+    }
+    
+    // JSON booleans bridge to `NSNumber`, so `true` would otherwise decode as the number 1.
+    private func number(_ key: Key) -> NSNumber? {
+        guard let value = dict[key.rawValue] as? NSNumber,
+              CFGetTypeID(value) != CFBooleanGetTypeID() else { return nil }
+
+        return value
+    }
+
+    // For fields the IAB spec defines as strings, but which bid servers are known
+    // to send as JSON numbers (e.g. `itunesitem`, `sourceapp`, `campaign`, `timestamp`).
+    func stringOrNumber(_ key: Key) -> String? {
+        if let value = dict[key.rawValue] as? String {
+            return value
+        }
+
+        return number(key)?.stringValue
+    }
+
+    // The mirror of `stringOrNumber`, for fields the IAB spec defines as integers
+    // (e.g. `fidelity`, `delay`) which bid servers are known to send as JSON strings.
+    func numberOrString(_ key: Key) -> NSNumber? {
+        if let value = dict[key.rawValue] as? String {
+            return value.strictNumberValue
+        }
+
+        return number(key)
+    }
+
+    func backwardsCompatiblePassthrough(key: Key) -> [ORTBExtPrebidPassthrough]? {
+        // The prebid spec defines in various parts of the schema the "passthrough" key
+        // which is supposed to map to a JSON object. However it was mistakenly implemented
+        // as an array of objects in this SDK. To maintain backwards compatibility we still
+        // check for the array of objects.
+        let dictionaries: [[String : Any]]?
+        switch dict[key.rawValue] {
+            case let value as [String : Any]:
+                dictionaries = [value]
+            case let value as [Any]:
+                dictionaries = value.compactMap { $0 as? [String : Any] }
+            default:
+                dictionaries = nil
+        }
+        
+        return dictionaries?.compactMap { CustomModelObjects.instantiate(json: $0) }
+    }
+}

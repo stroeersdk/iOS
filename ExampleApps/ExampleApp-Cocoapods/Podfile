@@ -1,0 +1,7 @@
+platform :ios, '15.0'
+
+target 'ExampleApp-Cocoapods' do
+  use_frameworks!
+
+  pod 'StroeerSDK', '1.0.0', :subspecs => ['Consent']
+end

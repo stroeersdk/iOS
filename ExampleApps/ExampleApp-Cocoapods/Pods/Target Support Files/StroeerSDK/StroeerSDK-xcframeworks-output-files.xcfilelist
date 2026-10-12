@@ -1,0 +1,2 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/StroeerSDK/Consent/StroeerSDK_Consent.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/StroeerSDK/Core/StroeerSDK.framework

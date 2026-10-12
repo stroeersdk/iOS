@@ -1,0 +1,104 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StroeerSDK_Consent
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+import Combine
+import ConsentViewController
+import Foundation
+import StroeerSDK
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class StroeerConsent : ObjectiveC.NSObject, Combine.ObservableObject {
+  @available(iOS, obsoleted: 1.0, message: "Create a new StroeerConsent() instance instead. This used to cause the memory leak issue")
+  @objc public static let instance: StroeerSDK_Consent.StroeerConsent
+  @objc override dynamic public init()
+  @objc public func setAppName(appName: Swift.String)
+  @available(iOS, obsoleted: 1.0, message: "This method is no longer needed as the debug mode is now determined by the app's build configuration. Please Stroeer.enableDebugMode() ")
+  @objc public func enableDebug(isEnabled: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func collect(viewController: UIKit.UIViewController, delegate: any StroeerSDK_Consent.StroeerConsentPublisherDelegate, options: StroeerSDK_Consent.StroeerConsentOptions? = StroeerConsentOptions())
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func showPrivacyManager(viewController: UIKit.UIViewController, delegate: any StroeerSDK_Consent.StroeerConsentPublisherDelegate, options: StroeerSDK_Consent.StroeerConsentOptions? = StroeerConsentOptions())
+  #endif
+  @objc public func customConsentTo(customConsentData: StroeerSDK_Consent.StroeerCustomConsentData, completionHandler: @escaping (ConsentViewController.SPGDPRConsent) -> Swift.Void, delegate: any StroeerSDK_Consent.StroeerConsentPublisherDelegate)
+  @objc public func clearConsentData(delegate: any StroeerSDK_Consent.StroeerConsentPublisherDelegate)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@available(*, deprecated, renamed: "StroeerConsent")
+public typealias YLConsent = StroeerSDK_Consent.StroeerConsent
+@objc public enum StroeerConsentError : Swift.Int, Swift.Error {
+  case consentRequestFailed
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension StroeerSDK_Consent.StroeerConsentError : Foundation.LocalizedError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+@available(*, deprecated, renamed: "StroeerConsentError")
+public typealias YieldloveConsentError = StroeerSDK_Consent.StroeerConsentError
+@objc @_inheritsConvenienceInitializers @objcMembers public class StroeerConsentOptions : ObjectiveC.NSObject {
+  @objc public var authId: Swift.String?
+  @objc public var variant: Swift.String?
+  @objc public var language: ConsentViewController.SPMessageLanguage
+  @objc override dynamic public init()
+  @objc deinit
+}
+@available(*, deprecated, renamed: "StroeerConsentOptions")
+public typealias ConsentOptions = StroeerSDK_Consent.StroeerConsentOptions
+@objc public protocol StroeerConsentPublisherDelegate {
+  @objc optional func onSPUIReady()
+  @objc optional func onSPUIFinished()
+  @objc optional func onConsentReady(consents: ConsentViewController.SPUserData)
+  @objc optional func onError(error: StroeerSDK_Consent.StroeerConsentError)
+  @objc optional func onAction(action: ConsentViewController.SPAction)
+  @objc optional func onSPFinished(consents: ConsentViewController.SPUserData)
+}
+@available(*, deprecated, renamed: "StroeerConsentPublisherDelegate")
+public typealias ConsentDelegate = StroeerSDK_Consent.StroeerConsentPublisherDelegate
+public protocol StroeerConsentManager {
+  var messageLanguage: ConsentViewController.SPMessageLanguage { get set }
+  func customConsentGDPR(vendors: [Swift.String], categories: [Swift.String], legIntCategories: [Swift.String], handler: @escaping (ConsentViewController.SPGDPRConsent) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func loadMessage(forAuthId authId: Swift.String?, publisherData: ConsentViewController.SPPublisherData?)
+  #endif
+  func loadGDPRPrivacyManager(withId id: Swift.String, tab: ConsentViewController.SPPrivacyManagerTab, useGroupPmIfAvailable: Swift.Bool)
+  static func clearAllData()
+}
+extension ConsentViewController.SPConsentManager : StroeerSDK_Consent.StroeerConsentManager {
+}
+@available(*, deprecated, renamed: "StroeerConsentManager")
+public typealias YLConsentManager = StroeerSDK_Consent.StroeerConsentManager
+@_hasMissingDesignatedInitializers public class StroeerConsentManagerFactory {
+  @objc deinit
+}
+@available(*, deprecated, renamed: "StroeerConsentManagerFactory")
+public typealias YLConsentManagerFactory = StroeerSDK_Consent.StroeerConsentManagerFactory
+@objc public class StroeerCustomConsentData : ObjectiveC.NSObject {
+  public var vendors: [Swift.String]
+  public var categories: [Swift.String]
+  public var legIntCategories: [Swift.String]
+  public init(vendors: [Swift.String], categories: [Swift.String], legIntCategories: [Swift.String])
+  @objc deinit
+}
+@available(*, deprecated, renamed: "StroeerCustomConsentData")
+public typealias CustomConsentData = StroeerSDK_Consent.StroeerCustomConsentData
+extension StroeerSDK_Consent.StroeerConsentError : Swift.Equatable {}
+extension StroeerSDK_Consent.StroeerConsentError : Swift.Hashable {}
+extension StroeerSDK_Consent.StroeerConsentError : Swift.RawRepresentable {}

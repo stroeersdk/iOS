@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroeer SDK - Admin</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+        nav { background: #1565c0; padding: 0 16px; display: flex; align-items: center; height: 48px; }
+        nav .brand { color: #fff; font-weight: 700; font-size: 16px; margin-right: 24px; text-decoration: none; }
+        nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; padding: 0 12px; height: 48px; display: flex; align-items: center; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,.1); }
+        nav a.active { color: #fff; border-bottom: 2px solid #fff; }
+        .content { padding: 24px; }
+        h1 { font-size: 22px; margin-bottom: 16px; }
+        .card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.12); margin-bottom: 16px; }
+        .status { font-size: 14px; color: #666; margin-bottom: 16px; }
+        .status span { font-weight: 600; }
+        .status .on { color: #2e7d32; }
+        .status .off { color: #c62828; }
+        button { background: #1565c0; color: #fff; border: none; border-radius: 6px; padding: 12px 24px; font-size: 16px; cursor: pointer; }
+        button:active { background: #0d47a1; }
+        button:disabled { background: #9e9e9e; cursor: default; }
+        #result { margin-top: 12px; font-size: 14px; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="brand" href="/admin">Stroeer SDK</a>
+        <a href="/admin" class="active">Settings</a>
+        <a href="/debuginfo">Debug Info</a>
+    </nav>
+    <div class="content">
+        <h1>Admin Dashboard</h1>
+        <div class="card">
+            <div class="status">Inspection Mode: <span id="inspectionStatus" class="{{INSPECTION_CLASS}}">{{INSPECTION_STATUS}}</span></div>
+            <button id="btn" onclick="enableInspection()" {{BUTTON_DISABLED}}>Enable Inspection Mode</button>
+            <div id="result"></div>
+        </div>
+        <div class="card">
+            <div class="status">Device IP: <span>{{DEVICE_IP}}:9890</span></div>
+            <div class="status">SDK Version: <span>{{SDK_VERSION}}</span></div>
+            <div class="status">TCString: <span style="font-size:11px;word-break:break-all">{{TC_STRING}}</span></div>
+        </div>
+    </div>
+    <script>
+        function enableInspection() {
+            var btn = document.getElementById('btn');
+            btn.disabled = true;
+            btn.textContent = 'Enabling...';
+            fetch('/debugenable')
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (data.status === 'ok') {
+                        document.getElementById('inspectionStatus').textContent = 'ON';
+                        document.getElementById('inspectionStatus').className = 'on';
+                        document.getElementById('result').textContent = 'Inspection mode enabled successfully.';
+                        btn.textContent = 'Enable Inspection Mode';
+                    }
+                })
+                .catch(function(err) {
+                    document.getElementById('result').textContent = 'Error: ' + err;
+                    btn.disabled = false;
+                    btn.textContent = 'Enable Inspection Mode';
+                });
+        }
+    </script>
+</body>
+</html>

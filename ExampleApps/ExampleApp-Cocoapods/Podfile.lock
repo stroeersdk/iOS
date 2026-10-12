@@ -1,0 +1,40 @@
+PODS:
+  - ConsentViewController (7.12.11):
+    - SPMobileCore (= 0.1.17)
+  - Google-Mobile-Ads-SDK (13.7.0):
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - GoogleUserMessagingPlatform (3.1.0)
+  - PrebidMobile (3.4.1):
+    - PrebidMobile/core (= 3.4.1)
+  - PrebidMobile/core (3.4.1)
+  - SPMobileCore (0.1.17)
+  - StroeerSDK/Consent (1.0.0):
+    - ConsentViewController (~> 7.12)
+    - StroeerSDK/Core
+  - StroeerSDK/Core (1.0.0):
+    - Google-Mobile-Ads-SDK (= 13.7.0)
+    - PrebidMobile (= 3.4.1)
+
+DEPENDENCIES:
+  - StroeerSDK/Consent (= 1.0.0)
+
+SPEC REPOS:
+  trunk:
+    - ConsentViewController
+    - Google-Mobile-Ads-SDK
+    - GoogleUserMessagingPlatform
+    - PrebidMobile
+    - SPMobileCore
+    - StroeerSDK
+
+SPEC CHECKSUMS:
+  ConsentViewController: 8c2cd6808ba10f4fe9be5949dd36e3ada40a911a
+  Google-Mobile-Ads-SDK: dd0ded6717d122c6a32c69dc4afcace7d276e4e4
+  GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
+  PrebidMobile: 2ebb30717214023ac5178f050a4aa1a7c41396d6
+  SPMobileCore: 1560d30d388df0089e251620229eb560fec598b2
+  StroeerSDK: 7a85c538bf05549f67859f77b24b9289c5eda6c9
+
+PODFILE CHECKSUM: 08e0ffea9505a18df030a3c8e69d5e0af9ecaaab
+
+COCOAPODS: 1.17.0

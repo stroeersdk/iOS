@@ -1,0 +1,911 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name StroeerSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+import AdSupport
+import AppTrackingTransparency
+import CoreGraphics
+import CoreTelephony
+import CryptoKit
+import Dispatch
+import Foundation
+import GoogleMobileAds
+import Network
+import OSLog
+import PrebidMobile
+@_exported import StroeerSDK
+import Swift
+import SwiftUI
+import UIKit
+import UniformTypeIdentifiers
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @objcMembers @_Concurrency.MainActor @preconcurrency final public class StroeerBannerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public var bannerConfiguration: StroeerSDK.BannerAdConfiguration {
+    get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public init(adSlotId: Swift.String, publisherViewController: UIKit.UIViewController, publisherDelegate: any StroeerSDK.StroeerBannerViewDelegate)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @_Concurrency.MainActor @preconcurrency final public var contentUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
+  #endif
+  @objc @_Concurrency.MainActor @preconcurrency final public var customTargeting: [Swift.String : Swift.String] {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+  @objc @_Concurrency.MainActor @preconcurrency final public func load()
+  @objc @_Concurrency.MainActor @preconcurrency final public func refresh()
+  @objc @_Concurrency.MainActor @preconcurrency final public func destroy()
+  @objc @_Concurrency.MainActor @preconcurrency final public func getSource() -> StroeerSDK.AdSourceInfo
+  @objc @_Concurrency.MainActor @preconcurrency final public func getBannerSize() -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc override final public func didMoveToSuperview()
+}
+@available(*, deprecated, renamed: "StroeerBannerView")
+public typealias YLBannerView = StroeerSDK.StroeerBannerView
+@objc public protocol StroeerBannerViewDelegate {
+  @objc optional func bannerViewDidReceiveAd(_ bannerView: StroeerSDK.StroeerBannerView)
+  @objc optional func bannerView(_ bannerView: StroeerSDK.StroeerBannerView, didFailToReceiveAdWithError error: any Swift.Error)
+  @objc optional func bannerViewWillPresentScreen(_ bannerView: StroeerSDK.StroeerBannerView)
+  @objc optional func bannerViewWillDismissScreen(_ bannerView: StroeerSDK.StroeerBannerView)
+  @objc optional func bannerViewDidDismissScreen(_ bannerView: StroeerSDK.StroeerBannerView)
+  @objc optional func bannerViewDidStartLoadingAd()
+  @objc optional func bannerViewDidRecordImpression(_ bannerView: StroeerSDK.StroeerBannerView)
+  @objc optional func bannerViewDidRecordClick(_ bannerView: StroeerSDK.StroeerBannerView)
+}
+@available(*, deprecated, renamed: "StroeerBannerViewDelegate")
+public typealias YLBannerViewDelegate = StroeerSDK.StroeerBannerViewDelegate
+@objc public protocol StroeerInterstitialDelegate {
+  @objc optional func onAdLoaded(interstitial: StroeerSDK.StroeerInterstitialView)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc optional func onAdFailedToLoad(interstitial: StroeerSDK.StroeerInterstitialView?, error: any Swift.Error)
+  #endif
+  @objc optional func onAdClicked(interstitial: StroeerSDK.StroeerInterstitialView)
+  @objc optional func onAdDismissedFullScreenContent(interstitial: StroeerSDK.StroeerInterstitialView)
+  @objc optional func onAdFailedToShowFullScreenContent(interstitial: StroeerSDK.StroeerInterstitialView, error: any Swift.Error)
+  @objc optional func onAdImpression(interstitial: StroeerSDK.StroeerInterstitialView)
+  @objc optional func onAdShowedFullScreenContent(interstitial: StroeerSDK.StroeerInterstitialView)
+}
+@available(*, deprecated, renamed: "StroeerInterstitialDelegate")
+public typealias YLInterstitialAdDelegate = StroeerSDK.StroeerInterstitialDelegate
+@objc @objcMembers public class StroeerInterstitialView : ObjectiveC.NSObject {
+  @objc @_Concurrency.MainActor public init(adSlotId: Swift.String, publisherDelegate: any StroeerSDK.StroeerInterstitialDelegate)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var contentUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
+  #endif
+  @objc public var customTargeting: [Swift.String : Swift.String] {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor public func load()
+  @objc @_Concurrency.MainActor public func loadAsync() async throws
+  @objc public func getAdSource() -> StroeerSDK.AdSourceInfo
+  @objc public func show(viewController: UIKit.UIViewController)
+  @objc deinit
+}
+@available(*, deprecated, renamed: "StroeerInterstitialView")
+public typealias YLInterstitialAd = StroeerSDK.StroeerInterstitialView
+@objc public protocol StroeerRewardedDelegate {
+  @objc optional func onAdLoaded(rewarded: StroeerSDK.StroeerRewardedView)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc optional func onAdFailedToLoad(rewarded: StroeerSDK.StroeerRewardedView?, error: any Swift.Error)
+  #endif
+  @objc optional func onAdClicked(rewarded: StroeerSDK.StroeerRewardedView)
+  @objc optional func onAdImpression(rewarded: StroeerSDK.StroeerRewardedView)
+  @objc optional func onAdShowedFullScreenContent(rewarded: StroeerSDK.StroeerRewardedView)
+  @objc optional func onAdWillDismissFullScreenContent(rewarded: StroeerSDK.StroeerRewardedView)
+  @objc optional func onAdDismissedFullScreenContent(rewarded: StroeerSDK.StroeerRewardedView)
+  @objc optional func onAdFailedToShowFullScreenContent(rewarded: StroeerSDK.StroeerRewardedView, error: any Swift.Error)
+  @objc optional func onUserEarnedReward(rewarded: StroeerSDK.StroeerRewardedView, amount: Foundation.NSDecimalNumber, type: Swift.String)
+}
+@objc @objcMembers public class StroeerRewardedView : ObjectiveC.NSObject {
+  @objc @_Concurrency.MainActor public init(adSlotId: Swift.String, publisherDelegate: any StroeerSDK.StroeerRewardedDelegate)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var contentUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
+  #endif
+  @objc public var customTargeting: [Swift.String : Swift.String] {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor public func load()
+  @objc @_Concurrency.MainActor public func loadAsync() async throws
+  @objc public func getAdSource() -> StroeerSDK.AdSourceInfo
+  @objc public func show(viewController: UIKit.UIViewController)
+  @objc deinit
+}
+public typealias GetAdSizesCompletion = (_ adSizes: Foundation.NSArray, _ error: (any Swift.Error)?) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class Stroeer : ObjectiveC.NSObject {
+  @objc public static let instance: StroeerSDK.Stroeer
+  @available(*, deprecated, message: "Use GlobalGamManager.adRequest instead")
+  @objc public var adRequest: GoogleMobileAds.AdManagerRequest {
+    @objc get
+  }
+  public var bidTrackingListener: (any StroeerSDK.BidTrackingListener)?
+  @objc public class func setup(appName: Swift.String)
+  @objc public func clearConfigurationCache()
+  @objc public static func enableDebugMode()
+  @objc public static func enableInspectionMode()
+  @objc public func getAdSizes(adSlotId: Swift.String, completion: @escaping StroeerSDK.GetAdSizesCompletion)
+  @objc public static func setGlobalCustomTargeting(targeting: [Swift.String : [Swift.String]])
+  @objc public static func setGlobalContentUrl(url: Swift.String)
+  @objc @available(*, deprecated, message: "Use setGlobalCustomTargeting instead")
+  public func setCustomTargets(targets: [Swift.String : Swift.String])
+  @objc deinit
+}
+@available(*, deprecated, renamed: "Stroeer")
+public typealias Yieldlove = StroeerSDK.Stroeer
+@_hasMissingDesignatedInitializers public class AdConfiguration {
+  final public let adSlotId: Swift.String
+  public var adUnitId: Swift.String {
+    get
+  }
+  public var source: StroeerSDK.AdSourceInfo {
+    get
+  }
+  public var contentUrl: Swift.String?
+  public var customTargeting: [Swift.String : Swift.String]
+  @objc deinit
+}
+@objc public enum AdSource : Swift.Int {
+  case Unknown = 0
+  case Stroeer = 1
+  public var displayName: Swift.String {
+    get
+  }
+  public static let UNKNOWN: Swift.String
+  public static let STROEER: Swift.String
+  public static let GOOGLE: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class AdSourceInfo : ObjectiveC.NSObject {
+  @objc public var adSource: StroeerSDK.AdSource
+  @objc public var adSubSource: Swift.String
+  @objc public var version: Swift.String
+  @objc public init(adSource: StroeerSDK.AdSource, version: Swift.String)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public enum AdType {
+  case banner
+  case interstitial
+  case rewarded
+  public var isBannerAd: Swift.Bool {
+    get
+  }
+  public static func == (a: StroeerSDK.AdType, b: StroeerSDK.AdType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum AdCategory {
+  case regular
+  case campaign
+  public var isCampaign: Swift.Bool {
+    get
+  }
+  public static func == (a: StroeerSDK.AdCategory, b: StroeerSDK.AdCategory) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class BannerAdConfiguration : StroeerSDK.AdConfiguration {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class InterstitialAdConfiguration : StroeerSDK.AdConfiguration {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SdkResult : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public enum AdWinnerAnalyzer {
+}
+@_hasMissingDesignatedInitializers public class ConfigurationIsNotLoadedException : Swift.Error {
+  @objc deinit
+}
+public typealias IConfigurationListener = any StroeerSDK.ISuccessFailListener<Any?>
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class ConfigurationManager : ObjectiveC.NSObject {
+  @objc public static let shared: StroeerSDK.ConfigurationManager
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var config: StroeerSDK.Configuration? {
+    @objc get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var lastError: (any Swift.Error)? {
+    @objc get
+  }
+  #endif
+  @objc public static var forcePrebidRendering: Swift.Bool
+  @objc public static var disableErrorLog: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func initialize(appName: Swift.String, listener: (any StroeerSDK.ISuccessFailListener<Any?>)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getConfig() -> StroeerSDK.Configuration?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @discardableResult
+  public func getConfigAsync(timeoutSeconds: Foundation.TimeInterval = 10.0) async -> StroeerSDK.Configuration?
+  #endif
+  @objc public func reset()
+  @objc public func isLoaded() -> Swift.Bool
+  @objc public func ensureValid() throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getAppName() -> Swift.String?
+  #endif
+  @objc public static func enableDebugMode()
+  @objc public static func isDebugMode() -> Swift.Bool
+  @objc public class func enableInspectionMode()
+  @objc public class func isInspectionMode() -> Swift.Bool
+  @objc public func toJsonString() -> Swift.String
+  @objc public func displayConfiguration()
+  @objc deinit
+}
+public enum ConfigurationParsingError : Foundation.LocalizedError {
+  case unableToParseDfpId
+  case unableToParseConfigId
+  case unableToParseAccountId
+  case missingBannerSize
+  case unableToParseConsentConfig
+  case unableToParseJson
+  case undefinedAppName
+  case unableToLoadConfiguration
+  case unableToParseAdSlotId
+  case unableToParseZonesInAdSlotId
+  case unableToParseAdUnitDataValues
+  case unableToParseAdSlotData
+  case unableToParseOverridePrivacyManagerId(_: Swift.String)
+  case unableToParseOverrideProperties(_: Swift.String)
+  case unableToParseOverrides
+  case unableToFindCommonSection
+  case unableToFindMonitoringSection
+  case unableToFindAdSlotsSection
+  case unableToFindModulesSection
+  case unableToFindModule(_: Swift.String)
+  case unableToFindSlot(_: Swift.String)
+  case dfpAppNetworkIsNotSet
+  case malformedOpenRtbApiObject
+  case inactiveSlot(_: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+public protocol IFetcher {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func load(appName: Swift.String) async -> Swift.String?
+  #endif
+  func store(json: Swift.String) async
+  func delete()
+}
+@objc @_inheritsConvenienceInitializers final public class ConfigABTest : ObjectiveC.NSObject, Swift.Codable {
+  final public var active: Swift.Bool?
+  final public var name: Swift.String?
+  final public var groups: [StroeerSDK.ConfigABTestGroup]?
+  @objc override dynamic public init()
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers final public class ConfigABTestGroup : ObjectiveC.NSObject, Swift.Codable {
+  final public var slots: [Swift.String]
+  final public var scope: StroeerSDK.ABTestScope
+  final public var ratio: StroeerSDK.ConfigABTestRatio
+  @objc override dynamic public init()
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers final public class ConfigABTestRatio : ObjectiveC.NSObject, Swift.Codable {
+  final public var main: Swift.Int
+  final public var test: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ABTestScope : Swift.String, Swift.Codable {
+  case request
+  case session
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigAdSlot : ObjectiveC.NSObject, Swift.Codable {
+  public var active: Swift.Bool?
+  @objc public var iOSPrebidConfigId: Swift.String?
+  public var rtaAuction: Swift.Bool?
+  public var autoRefreshTimeMs: Swift.Int?
+  @objc public var keyValues: [Swift.String : [Swift.String]]?
+  @objc public var customAdSizes: [StroeerSDK.ConfigCustomAdSize]?
+  @objc override dynamic public init()
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc public func isInterstitial() -> Swift.Bool
+  @objc public func isBanner() -> Swift.Bool
+  @objc deinit
+}
+@objc public enum AdsSoundSettingStates : Swift.Int, Swift.Codable {
+  case mute
+  case unmute
+  case respectUserSoundSetting
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigCommon : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var dfpAppNetwork: Swift.String?
+  @objc public var dfpiOSAppName: Swift.String?
+  public var dfpAdRequestTimeoutMs: Swift.Int?
+  public var prebidAdRequestTimeoutMs: Swift.Int?
+  public var updateIntervalMs: Swift.Int?
+  public var rtaAuction: Swift.Bool?
+  @objc public var iOSStoreUrl: Swift.String?
+  @objc public var iOSITunesId: Swift.String?
+  @objc public var inventoryStructure: Swift.String?
+  public var setAppMuted: Swift.Bool?
+  @objc override dynamic public init()
+  @objc public var isSDI: Swift.Bool {
+    @objc get
+  }
+  @objc public func getSoundSetting() -> StroeerSDK.AdsSoundSettingStates
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigCustomAdSize : ObjectiveC.NSObject, Swift.Codable {
+  public var w: Swift.Int?
+  public var h: Swift.Int?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigFormat : ObjectiveC.NSObject, Swift.Codable {
+  public var active: Swift.Bool?
+  @objc public var availableOn: [Swift.String]?
+  @objc public var dfpSizes: StroeerSDK.ConfigFormatSizes?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigFormatSizes : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var iosAdSizes: [Swift.String]?
+  @objc public var customAdSizes: [StroeerSDK.ConfigCustomAdSize]?
+  @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func getBannerSize(for gadSize: Swift.String) -> GoogleMobileAds.AdSize?
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigModule_ID5 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var active: Swift.Bool
+  @objc public var refreshIntervalInSecs: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigModule_Prebid : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var yieldloveAccountId: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigModule_Confiant : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var active: Swift.Bool
+  @objc public var confiantPropertyID: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigModule_SourcePoint : ObjectiveC.NSObject, Swift.Codable {
+  public var sourcepointAccountId: Swift.Int?
+  public var active: Swift.Bool?
+  public var propertyId: Swift.Int?
+  @objc public var propertyName: Swift.String?
+  @objc public var privacyManagerId: Swift.String?
+  @objc public var overrides: [Swift.String : StroeerSDK.ConfigModule_SourcePoint]?
+  @objc override dynamic public init()
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigModules : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var prebid: StroeerSDK.ConfigModule_Prebid?
+  @objc public var sourcePoint: StroeerSDK.ConfigModule_SourcePoint?
+  @objc public var confiant: StroeerSDK.ConfigModule_Confiant?
+  @objc public var id5: StroeerSDK.ConfigModule_ID5
+  @objc override dynamic public init()
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigOpenRtb : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var apis: [StroeerSDK.ConfigApis]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getFramework() -> [Swift.Int]?
+  #endif
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class ConfigApis : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var framework: Swift.Int
+  @objc public init(framework: Swift.Int)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ConfigZonesAndPageTypes : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var level1: [Swift.String : [Swift.String : [Swift.String : Swift.String]]]?
+  @objc public var level2: [Swift.String : [Swift.String : [Swift.String : Swift.String]]]?
+  @objc public var pageType: [Swift.String : [Swift.String : [Swift.String : Swift.String]]]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class Configuration : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var common: StroeerSDK.ConfigCommon?
+  @objc public var abTest: StroeerSDK.ConfigABTest?
+  @objc public var formats: [Swift.String : StroeerSDK.ConfigFormat]?
+  @objc public var modules: StroeerSDK.ConfigModules?
+  @objc public var openRtb: StroeerSDK.ConfigOpenRtb?
+  @objc public var zonesAndPageTypes: StroeerSDK.ConfigZonesAndPageTypes?
+  @objc public var adSlots: [Swift.String : StroeerSDK.ConfigAdSlot]?
+  @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func fromJson(_ json: Swift.String) -> StroeerSDK.Configuration?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func fromData(_ data: Foundation.Data) -> StroeerSDK.Configuration?
+  #endif
+  @objc public func isValid() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getAdSlot(adSlotId: Swift.String) -> StroeerSDK.ConfigAdSlot?
+  #endif
+  @objc public func getPlacementName(_ adSlotId: Swift.String) -> Swift.String
+  @objc public func getSlotNameWithoutSdiPrefix(_ adSlotId: Swift.String) -> Swift.String
+  @objc public func getAdUnitId(adSlotId: Swift.String) -> Swift.String
+  @objc public func getBannerNames() -> [Swift.String]
+  @objc public func getInterstitialNames() -> [Swift.String]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class AdminHttpServer {
+  public static func launch()
+  public static func shutdown()
+  @objc deinit
+}
+extension UIKit.UIPasteboard {
+  public func set(attributedString: Foundation.NSAttributedString)
+}
+public struct DebugRecord : Swift.Identifiable {
+  public let id: Foundation.UUID
+  public let timestamp: Foundation.Date
+  public let type: StroeerSDK.AdType
+  public let recordType: StroeerSDK.DebugRecord.RecordType
+  public let targeting: [Swift.String : Swift.String]
+  public let adUnitId: Swift.String
+  public enum RecordType : Swift.String {
+    case prebidSent
+    case prebidReceived
+    case prebidSkipped
+    case gamSent
+    case gamReceived
+    case prebidRendered
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init(type: StroeerSDK.AdType, recordType: StroeerSDK.DebugRecord.RecordType, targeting: [Swift.String : Swift.String], adUnitId: Swift.String)
+  public typealias ID = Foundation.UUID
+}
+public protocol IDebugInfo {
+  func toString() -> Foundation.NSAttributedString
+  func getAdSourceInfo() -> StroeerSDK.AdSourceInfo
+  func getPublisherCallString() -> Swift.String
+  func getServedInTime() -> Swift.Double
+}
+@_Concurrency.MainActor @preconcurrency public struct DebugLoggerView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s10StroeerSDK15DebugLoggerViewV4bodyQrvp", 0) __
+}
+@objc @_hasMissingDesignatedInitializers public class AdSlotConfigurationError : Foundation.NSError, @unchecked Swift.Sendable {
+  public init(_ error: any Swift.Error)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class IdentityManager : ObjectiveC.NSObject {
+  @objc public static let shared: StroeerSDK.IdentityManager
+  @objc public func useID5()
+  @objc public func setCustomInfo(_ customInfo: StroeerSDK.IdentityCustomInfo)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IdentityCustomInfo : ObjectiveC.NSObject {
+  @objc public var email: Swift.String?
+  @objc public var phone: Swift.String?
+  @objc public var puid: Swift.String?
+  @objc public var regionCode: Swift.String?
+  @objc public var cityCode: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AdMonitorRefresher {
+  public static var shared: StroeerSDK.AdMonitorRefresher
+  public func addNewReloader(adReloader: any StroeerSDK.IAdReloader)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func reload(slotView: UIKit.UIView, placementId: Swift.String?)
+  #endif
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class ConfiantLoader : ObjectiveC.NSObject {
+  @objc public static var shared: StroeerSDK.ConfiantLoader
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func initialize(confiantPropertyId: Swift.String, enableReload: Swift.Bool = false, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
+  @objc public func doesExist() -> Swift.Bool
+  @objc public func enableTestMode()
+  public func mark(adReloader: any StroeerSDK.IAdReloader)
+  @objc deinit
+}
+public protocol IAdMonitoring {
+  func enableTestMode()
+  func enableReload()
+  func initialize(confiantPropertyId: Swift.String, completetion: @escaping (Swift.Bool) -> Swift.Void)
+  func mark(slotView: UIKit.UIView, withPlacementId placementId: Swift.String)
+}
+public protocol IAdReloader : AnyObject {
+  func getView() -> UIKit.UIView
+  func getAdSlot() -> Swift.String
+  func reloadAd(slotView: UIKit.UIView, placementId: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor final public class PrebidHtmlBannerView : UIKit.UIView {
+  @_Concurrency.MainActor final public var listener: (any StroeerSDK.PrebidHtmlBannerViewListener)?
+  @_Concurrency.MainActor final public var adSlotId: Swift.String
+  @_Concurrency.MainActor @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @_Concurrency.MainActor final public func setAdSize(width: CoreFoundation.CGFloat, height: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func setHtml(_ html: Swift.String, baseUrl: Swift.String? = nil)
+  #endif
+  @_Concurrency.MainActor final public func onHostResumed()
+  @_Concurrency.MainActor final public func onHostPaused()
+  @_Concurrency.MainActor final public func destroy()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @objc override final public func willMove(toWindow newWindow: UIKit.UIWindow?)
+  #endif
+  @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+extension StroeerSDK.PrebidHtmlBannerView : WebKit.WKNavigationDelegate, WebKit.WKUIDelegate, WebKit.WKScriptMessageHandler, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @objc nonisolated final public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc nonisolated final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc final public func webViewWebContentProcessDidTerminate(_ webView: WebKit.WKWebView)
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> WebKit.WKWebView?
+  #endif
+}
+public protocol PrebidHtmlBannerViewListener : AnyObject {
+  func onAdClosed()
+  func onAdFailedToLoad(error: any Swift.Error)
+  func onAdOpened()
+  func onAdLoaded()
+  func onAdClicked()
+  func onAdImpression()
+}
+public protocol BidTrackingListener {
+  func didSendToPrebid(targeting: [Swift.String : Swift.String], adType: StroeerSDK.AdType, adUnitId: Swift.String)
+  func didReceiveFromPrebid(targeting: [Swift.String : Swift.String], adUnitId: Swift.String)
+  func didSendToGAM(targeting: [Swift.String : Swift.String], adUnitId: Swift.String)
+  func didReceiveFromGAM(targeting: [Swift.String : Swift.String], adType: StroeerSDK.AdType, adUnitId: Swift.String)
+  func didRenderViaPrebid(targeting: [Swift.String : Swift.String], adType: StroeerSDK.AdType, adUnitId: Swift.String)
+  func markPrebidSkipped(targeting: [Swift.String : Swift.String], adType: StroeerSDK.AdType, adUnitId: Swift.String)
+}
+@_hasMissingDesignatedInitializers final public class OrtbJsonHelper {
+  public static func clear()
+  public static func apply()
+  public static func addOrUpdate(_ value: Any, _ path: Swift.String...)
+  public static func addOrUpdate(_ value: Any, path: [Swift.String])
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func findString(_ path: Swift.String...) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func findNumber(_ path: Swift.String...) -> Foundation.NSNumber?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func findBoolean(_ path: Swift.String...) -> Swift.Bool?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func findDictionary(_ path: Swift.String...) -> [Swift.String : Any]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func findArray(_ path: Swift.String...) -> [Any]?
+  #endif
+  @discardableResult
+  public static func remove(_ path: Swift.String...) -> Swift.Bool
+  @discardableResult
+  public static func remove(path: [Swift.String]) -> Swift.Bool
+  public static func snapshot() -> [Swift.String : Any]
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(OrtbJson) final public class OrtbJsonObjC : ObjectiveC.NSObject {
+  @objc public static func addOrUpdate(_ value: Any, path: [Swift.String])
+  @discardableResult
+  @objc public static func remove(path: [Swift.String]) -> Swift.Bool
+  @objc public static func apply()
+  @objc public static func clear()
+  @objc public static func snapshot() -> [Swift.String : Any]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TimeEvent {
+  public var typeName: Swift.String {
+    get
+  }
+  public var timeSinceMeasuringStarted: Swift.Int
+  final public let eventProduced: Foundation.Date
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TimeSession {
+  public var startingPoint: Foundation.Date?
+  public func reset()
+  public func start() throws
+  public func stop() throws
+  public func recordEvent(event: StroeerSDK.TimeEvent) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getEvent<T>(ofType type: T.Type) -> T? where T : StroeerSDK.TimeEvent
+  #endif
+  public func getServedInTime() -> Foundation.TimeInterval
+  @objc deinit
+}
+public enum BiddingAdapter : Swift.String {
+  case Prebid
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BidAdapterResultCode : Swift.String {
+  case SUCCESS
+  case NO_BIDS
+  case TIMEOUT
+  case FAILED
+  case NOT_AVAILABLE
+  case SKIPPED
+  public static func fromPrebidResultCode(code: PrebidMobile.ResultCode) -> StroeerSDK.BidAdapterResultCode
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension _Concurrency.Task where Success == Swift.Never, Failure == Swift.Never {
+  public static func delay(seconds: Swift.Double) async
+}
+@_hasMissingDesignatedInitializers @objcMembers public class ConsentStringDecoder {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public class func isVendorConsentGiven(consentString: Swift.String?, vendorId: Swift.Int) -> Swift.Bool
+  #endif
+  @objc deinit
+}
+public protocol ISuccessFailListener<T> : AnyObject {
+  associatedtype T
+  func onSuccess(data: Self.T)
+  func onFailed()
+}
+public struct HttpResponse {
+  public let data: Foundation.Data?
+  public let response: Foundation.URLResponse?
+  public let error: (any Swift.Error)?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(data: Foundation.Data?, response: Foundation.URLResponse?, error: (any Swift.Error)? = nil)
+  #endif
+  public func isSuccessfulHttpResponse() -> Swift.Bool
+}
+public enum HttpError : Foundation.LocalizedError {
+  case invalidRequestUrl(invalidUrl: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+public protocol IHttpRequest {
+  func get(url: Swift.String) async -> StroeerSDK.HttpResponse
+  func get(url: Swift.String, headers: [Swift.String : Swift.String]) async -> StroeerSDK.HttpResponse
+  #if compiler(>=5.3) && $NonescapableTypes
+  func post(url: Swift.String, body: Foundation.Data?, headers: [Swift.String : Swift.String]) async -> StroeerSDK.HttpResponse
+  #endif
+  func setTimeoutInSec(timeoutInSec: Swift.Int)
+}
+public class HttpRequest : StroeerSDK.IHttpRequest {
+  public static let httpMethodGet: Swift.String
+  public static let httpMethodPost: Swift.String
+  public func setTimeoutInSec(timeoutInSec: Swift.Int)
+  public init()
+  public func get(url: Swift.String) async -> StroeerSDK.HttpResponse
+  public func get(url: Swift.String, headers: [Swift.String : Swift.String] = [:]) async -> StroeerSDK.HttpResponse
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func post(url: Swift.String, body: Foundation.Data?, headers: [Swift.String : Swift.String] = [:]) async -> StroeerSDK.HttpResponse
+  #endif
+  @objc deinit
+}
+public enum Connection : Swift.String {
+  case mobile
+  case wifi
+  case other
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LogType : Swift.Int, Swift.Comparable {
+  case info
+  case debug
+  case error
+  case fatal
+  public static func < (a: StroeerSDK.LogType, b: StroeerSDK.LogType) -> Swift.Bool
+  public static func <= (a: StroeerSDK.LogType, b: StroeerSDK.LogType) -> Swift.Bool
+  public static func >= (a: StroeerSDK.LogType, b: StroeerSDK.LogType) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum TraceType : Swift.Int {
+  case slient
+  case stacktrace
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class SLogger {
+  public static var logType: StroeerSDK.LogType {
+    get
+    set
+  }
+  public static var enableTrace: Swift.Bool {
+    get
+    set
+  }
+  public static var enableDebug: Swift.Bool {
+    get
+    set
+  }
+  public static func i(_ message: Swift.String)
+  public static func d(_ message: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func e(_ message: Swift.String, _ error: (any Swift.Error)? = nil)
+  #endif
+  public static func f(_ message: Swift.String) -> Swift.Never
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class BaseSLogger {
+  public func info(message: Swift.String)
+  public func debug(message: Swift.String)
+  public func error(message: Swift.String)
+  public func fatal(message: Swift.String) -> Swift.Never
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+public class SLogger14 {
+  public func info(message: Swift.String)
+  public func debug(message: Swift.String)
+  public func error(message: Swift.String)
+  public func fatal(message: Swift.String) -> Swift.Never
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UIUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func getRootViewController() -> UIKit.UIViewController?
+  #endif
+  @objc deinit
+}
+extension StroeerSDK.AdSource : Swift.Equatable {}
+extension StroeerSDK.AdSource : Swift.Hashable {}
+extension StroeerSDK.AdSource : Swift.RawRepresentable {}
+extension StroeerSDK.AdType : Swift.Equatable {}
+extension StroeerSDK.AdType : Swift.Hashable {}
+extension StroeerSDK.AdCategory : Swift.Equatable {}
+extension StroeerSDK.AdCategory : Swift.Hashable {}
+extension StroeerSDK.ABTestScope : Swift.Equatable {}
+extension StroeerSDK.ABTestScope : Swift.Hashable {}
+extension StroeerSDK.ABTestScope : Swift.RawRepresentable {}
+extension StroeerSDK.AdsSoundSettingStates : Swift.Equatable {}
+extension StroeerSDK.AdsSoundSettingStates : Swift.Hashable {}
+extension StroeerSDK.AdsSoundSettingStates : Swift.RawRepresentable {}
+extension StroeerSDK.DebugRecord.RecordType : Swift.Equatable {}
+extension StroeerSDK.DebugRecord.RecordType : Swift.Hashable {}
+extension StroeerSDK.DebugRecord.RecordType : Swift.RawRepresentable {}
+extension StroeerSDK.DebugLoggerView : Swift.Sendable {}
+extension StroeerSDK.BiddingAdapter : Swift.Equatable {}
+extension StroeerSDK.BiddingAdapter : Swift.Hashable {}
+extension StroeerSDK.BiddingAdapter : Swift.RawRepresentable {}
+extension StroeerSDK.BidAdapterResultCode : Swift.Equatable {}
+extension StroeerSDK.BidAdapterResultCode : Swift.Hashable {}
+extension StroeerSDK.BidAdapterResultCode : Swift.RawRepresentable {}
+extension StroeerSDK.Connection : Swift.Equatable {}
+extension StroeerSDK.Connection : Swift.Hashable {}
+extension StroeerSDK.Connection : Swift.RawRepresentable {}
+extension StroeerSDK.LogType : Swift.Hashable {}
+extension StroeerSDK.LogType : Swift.RawRepresentable {}
+extension StroeerSDK.TraceType : Swift.Equatable {}
+extension StroeerSDK.TraceType : Swift.Hashable {}
+extension StroeerSDK.TraceType : Swift.RawRepresentable {}

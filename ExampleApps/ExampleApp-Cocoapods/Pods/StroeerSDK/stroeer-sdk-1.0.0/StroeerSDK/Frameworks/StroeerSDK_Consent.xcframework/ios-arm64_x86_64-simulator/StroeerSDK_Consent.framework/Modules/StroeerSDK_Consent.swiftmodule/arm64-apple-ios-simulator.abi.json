@@ -1,0 +1,2530 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "StroeerSDK_Consent",
+    "printedName": "StroeerSDK_Consent",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "StroeerSDK",
+        "printedName": "StroeerSDK",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerConsent",
+        "printedName": "StroeerConsent",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsent",
+                "printedName": "StroeerSDK_Consent.StroeerConsent",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent(im)init",
+            "mangledName": "$s18StroeerSDK_Consent0aC0CACycfc",
+            "moduleName": "StroeerSDK_Consent",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "setAppName",
+            "printedName": "setAppName(appName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent(im)setAppNameWithAppName:",
+            "mangledName": "$s18StroeerSDK_Consent0aC0C10setAppName03appF0ySS_tF",
+            "moduleName": "StroeerSDK_Consent",
+            "objc_name": "setAppNameWithAppName:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collect",
+            "printedName": "collect(viewController:delegate:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsentPublisherDelegate",
+                "printedName": "any StroeerSDK_Consent.StroeerConsentPublisherDelegate",
+                "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "StroeerSDK_Consent.StroeerConsentOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StroeerConsentOptions",
+                    "printedName": "StroeerSDK_Consent.StroeerConsentOptions",
+                    "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent(im)collectWithViewController:delegate:options:",
+            "mangledName": "$s18StroeerSDK_Consent0aC0C7collect14viewController8delegate7optionsySo06UIViewF0C_AA0aC17PublisherDelegate_pAA0aC7OptionsCSgtF",
+            "moduleName": "StroeerSDK_Consent",
+            "objc_name": "collectWithViewController:delegate:options:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "showPrivacyManager",
+            "printedName": "showPrivacyManager(viewController:delegate:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsentPublisherDelegate",
+                "printedName": "any StroeerSDK_Consent.StroeerConsentPublisherDelegate",
+                "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "StroeerSDK_Consent.StroeerConsentOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StroeerConsentOptions",
+                    "printedName": "StroeerSDK_Consent.StroeerConsentOptions",
+                    "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent(im)showPrivacyManagerWithViewController:delegate:options:",
+            "mangledName": "$s18StroeerSDK_Consent0aC0C18showPrivacyManager14viewController8delegate7optionsySo06UIViewH0C_AA0aC17PublisherDelegate_pAA0aC7OptionsCSgtF",
+            "moduleName": "StroeerSDK_Consent",
+            "objc_name": "showPrivacyManagerWithViewController:delegate:options:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "customConsentTo",
+            "printedName": "customConsentTo(customConsentData:completionHandler:delegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerCustomConsentData",
+                "printedName": "StroeerSDK_Consent.StroeerCustomConsentData",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerCustomConsentData"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ConsentViewController.SPGDPRConsent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SPGDPRConsent",
+                    "printedName": "ConsentViewController.SPGDPRConsent",
+                    "usr": "c:@M@ConsentViewController@objc(cs)SPGDPRConsent"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsentPublisherDelegate",
+                "printedName": "any StroeerSDK_Consent.StroeerConsentPublisherDelegate",
+                "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent(im)customConsentToCustomConsentData:completionHandler:delegate:",
+            "mangledName": "$s18StroeerSDK_Consent0aC0C06customC2To0dC4Data17completionHandler8delegateyAA0a6CustomcF0C_y0C14ViewController13SPGDPRConsentCcAA0aC17PublisherDelegate_ptF",
+            "moduleName": "StroeerSDK_Consent",
+            "objc_name": "customConsentToCustomConsentData:completionHandler:delegate:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearConsentData",
+            "printedName": "clearConsentData(delegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsentPublisherDelegate",
+                "printedName": "any StroeerSDK_Consent.StroeerConsentPublisherDelegate",
+                "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent(im)clearConsentDataWithDelegate:",
+            "mangledName": "$s18StroeerSDK_Consent0aC0C05clearC4Data8delegateyAA0aC17PublisherDelegate_p_tF",
+            "moduleName": "StroeerSDK_Consent",
+            "objc_name": "clearConsentDataWithDelegate:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsent",
+        "mangledName": "$s18StroeerSDK_Consent0aC0C",
+        "moduleName": "StroeerSDK_Consent",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ObservableObject",
+            "printedName": "ObservableObject",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ObjectWillChangePublisher",
+                "printedName": "ObjectWillChangePublisher",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ObservableObjectPublisher",
+                    "printedName": "Combine.ObservableObjectPublisher",
+                    "usr": "s:7Combine25ObservableObjectPublisherC"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7Combine16ObservableObjectP",
+            "mangledName": "$s7Combine16ObservableObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerConsentError",
+        "printedName": "StroeerConsentError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "consentRequestFailed",
+            "printedName": "consentRequestFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StroeerSDK_Consent.StroeerConsentError.Type) -> StroeerSDK_Consent.StroeerConsentError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StroeerConsentError",
+                    "printedName": "StroeerSDK_Consent.StroeerConsentError",
+                    "usr": "c:@M@StroeerSDK_Consent@E@StroeerConsentError"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "StroeerSDK_Consent.StroeerConsentError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StroeerConsentError",
+                        "printedName": "StroeerSDK_Consent.StroeerConsentError",
+                        "usr": "c:@M@StroeerSDK_Consent@E@StroeerConsentError"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@StroeerSDK_Consent@E@StroeerConsentError@StroeerConsentErrorConsentRequestFailed",
+            "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO20consentRequestFailedyA2CmF",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "StroeerSDK_Consent.StroeerConsentError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StroeerConsentError",
+                    "printedName": "StroeerSDK_Consent.StroeerConsentError",
+                    "usr": "c:@M@StroeerSDK_Consent@E@StroeerConsentError"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18StroeerSDK_Consent0aC5ErrorO8rawValueACSgSi_tcfc",
+            "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO8rawValueACSgSi_tcfc",
+            "moduleName": "StroeerSDK_Consent",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0aC5ErrorO8rawValueSivp",
+            "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO8rawValueSivp",
+            "moduleName": "StroeerSDK_Consent",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC5ErrorO8rawValueSivg",
+                "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO8rawValueSivg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "_nsErrorDomain",
+            "printedName": "_nsErrorDomain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0aC5ErrorO03_nsD6DomainSSvpZ",
+            "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO03_nsD6DomainSSvpZ",
+            "moduleName": "StroeerSDK_Consent",
+            "static": true,
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC5ErrorO03_nsD6DomainSSvgZ",
+                "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO03_nsD6DomainSSvgZ",
+                "moduleName": "StroeerSDK_Consent",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0aC5ErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO16errorDescriptionSSSgvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC5ErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO16errorDescriptionSSSgvg",
+                "moduleName": "StroeerSDK_Consent",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@StroeerSDK_Consent@E@StroeerConsentError",
+        "mangledName": "$s18StroeerSDK_Consent0aC5ErrorO",
+        "moduleName": "StroeerSDK_Consent",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_BridgedNSError",
+            "printedName": "_BridgedNSError",
+            "usr": "s:10Foundation15_BridgedNSErrorP",
+            "mangledName": "$s10Foundation15_BridgedNSErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeableError",
+            "printedName": "_ObjectiveCBridgeableError",
+            "usr": "s:10Foundation26_ObjectiveCBridgeableErrorP",
+            "mangledName": "$s10Foundation26_ObjectiveCBridgeableErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerConsentOptions",
+        "printedName": "StroeerConsentOptions",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "authId",
+            "printedName": "authId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(py)authId",
+            "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC6authIdSSSgvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)authId",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC6authIdSSSgvg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)setAuthId:",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC6authIdSSSgvs",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC7OptionsC6authIdSSSgvM",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC6authIdSSSgvM",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "variant",
+            "printedName": "variant",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(py)variant",
+            "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC7variantSSSgvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)variant",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC7variantSSSgvg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)setVariant:",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC7variantSSSgvs",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC7OptionsC7variantSSSgvM",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC7variantSSSgvM",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "language",
+            "printedName": "language",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SPMessageLanguage",
+                "printedName": "ConsentViewController.SPMessageLanguage",
+                "usr": "c:@M@ConsentViewController@E@SPMessageLanguage"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(py)language",
+            "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC8language0C14ViewController17SPMessageLanguageOvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SPMessageLanguage",
+                    "printedName": "ConsentViewController.SPMessageLanguage",
+                    "usr": "c:@M@ConsentViewController@E@SPMessageLanguage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)language",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC8language0C14ViewController17SPMessageLanguageOvg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SPMessageLanguage",
+                    "printedName": "ConsentViewController.SPMessageLanguage",
+                    "usr": "c:@M@ConsentViewController@E@SPMessageLanguage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)setLanguage:",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC8language0C14ViewController17SPMessageLanguageOvs",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC7OptionsC8language0C14ViewController17SPMessageLanguageOvM",
+                "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC8language0C14ViewController17SPMessageLanguageOvM",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsentOptions",
+                "printedName": "StroeerSDK_Consent.StroeerConsentOptions",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions(im)init",
+            "mangledName": "$s18StroeerSDK_Consent0aC7OptionsCACycfc",
+            "moduleName": "StroeerSDK_Consent",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerConsentOptions",
+        "mangledName": "$s18StroeerSDK_Consent0aC7OptionsC",
+        "moduleName": "StroeerSDK_Consent",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerConsentPublisherDelegate",
+        "printedName": "StroeerConsentPublisherDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onSPUIReady",
+            "printedName": "onSPUIReady()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate(im)onSPUIReady",
+            "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP11onSPUIReadyyyF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onSPUIFinished",
+            "printedName": "onSPUIFinished()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate(im)onSPUIFinished",
+            "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP14onSPUIFinishedyyF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onConsentReady",
+            "printedName": "onConsentReady(consents:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SPUserData",
+                "printedName": "ConsentViewController.SPUserData",
+                "usr": "c:@M@ConsentViewController@objc(cs)SPUserData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate(im)onConsentReadyWithConsents:",
+            "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP02onC5Ready8consentsy0C14ViewController10SPUserDataC_tF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "protocolReq": true,
+            "objc_name": "onConsentReadyWithConsents:",
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onError",
+            "printedName": "onError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerConsentError",
+                "printedName": "StroeerSDK_Consent.StroeerConsentError",
+                "usr": "c:@M@StroeerSDK_Consent@E@StroeerConsentError"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate(im)onErrorWithError:",
+            "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP7onError5erroryAA0acG0O_tF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "protocolReq": true,
+            "objc_name": "onErrorWithError:",
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onAction",
+            "printedName": "onAction(action:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SPAction",
+                "printedName": "ConsentViewController.SPAction",
+                "usr": "c:@M@ConsentViewController@objc(cs)SPAction"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate(im)onActionWithAction:",
+            "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP8onAction6actiony0C14ViewController8SPActionC_tF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "protocolReq": true,
+            "objc_name": "onActionWithAction:",
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onSPFinished",
+            "printedName": "onSPFinished(consents:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SPUserData",
+                "printedName": "ConsentViewController.SPUserData",
+                "usr": "c:@M@ConsentViewController@objc(cs)SPUserData"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate(im)onSPFinishedWithConsents:",
+            "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP12onSPFinished8consentsy0C14ViewController10SPUserDataC_tF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentPublisherDelegate>",
+            "protocolReq": true,
+            "objc_name": "onSPFinishedWithConsents:",
+            "declAttributes": [
+              "Optional",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@StroeerSDK_Consent@objc(pl)StroeerConsentPublisherDelegate",
+        "mangledName": "$s18StroeerSDK_Consent0aC17PublisherDelegateP",
+        "moduleName": "StroeerSDK_Consent",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerConsentManager",
+        "printedName": "StroeerConsentManager",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "messageLanguage",
+            "printedName": "messageLanguage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SPMessageLanguage",
+                "printedName": "ConsentViewController.SPMessageLanguage",
+                "usr": "c:@M@ConsentViewController@E@SPMessageLanguage"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0Ovp",
+            "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0Ovp",
+            "moduleName": "StroeerSDK_Consent",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SPMessageLanguage",
+                    "printedName": "ConsentViewController.SPMessageLanguage",
+                    "usr": "c:@M@ConsentViewController@E@SPMessageLanguage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0Ovg",
+                "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0Ovg",
+                "moduleName": "StroeerSDK_Consent",
+                "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+                "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SPMessageLanguage",
+                    "printedName": "ConsentViewController.SPMessageLanguage",
+                    "usr": "c:@M@ConsentViewController@E@SPMessageLanguage"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0Ovs",
+                "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0Ovs",
+                "moduleName": "StroeerSDK_Consent",
+                "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+                "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0OvM",
+                "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP15messageLanguage0C14ViewController09SPMessageF0OvM",
+                "moduleName": "StroeerSDK_Consent",
+                "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+                "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "customConsentGDPR",
+            "printedName": "customConsentGDPR(vendors:categories:legIntCategories:handler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ConsentViewController.SPGDPRConsent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SPGDPRConsent",
+                    "printedName": "ConsentViewController.SPGDPRConsent",
+                    "usr": "c:@M@ConsentViewController@objc(cs)SPGDPRConsent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18StroeerSDK_Consent0aC7ManagerP06customC4GDPR7vendors10categories16legIntCategories7handlerySaySSG_A2Iy0C14ViewController13SPGDPRConsentCctF",
+            "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP06customC4GDPR7vendors10categories16legIntCategories7handlerySaySSG_A2Iy0C14ViewController13SPGDPRConsentCctF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loadMessage",
+            "printedName": "loadMessage(forAuthId:publisherData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : ConsentViewController.AnyEncodable]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : ConsentViewController.AnyEncodable]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyEncodable",
+                        "printedName": "ConsentViewController.AnyEncodable",
+                        "usr": "c:@M@ConsentViewController@objc(cs)AnyEncodable"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18StroeerSDK_Consent0aC7ManagerP11loadMessage9forAuthId13publisherDataySSSg_SDySS0C14ViewController12AnyEncodableCGSgtF",
+            "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP11loadMessage9forAuthId13publisherDataySSSg_SDySS0C14ViewController12AnyEncodableCGSgtF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loadGDPRPrivacyManager",
+            "printedName": "loadGDPRPrivacyManager(withId:tab:useGroupPmIfAvailable:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SPPrivacyManagerTab",
+                "printedName": "ConsentViewController.SPPrivacyManagerTab",
+                "usr": "c:@M@ConsentViewController@E@SPPrivacyManagerTab"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18StroeerSDK_Consent0aC7ManagerP015loadGDPRPrivacyD06withId3tab21useGroupPmIfAvailableySS_0C14ViewController09SPPrivacyD3TabOSbtF",
+            "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP015loadGDPRPrivacyD06withId3tab21useGroupPmIfAvailableySS_0C14ViewController09SPPrivacyD3TabOSbtF",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearAllData",
+            "printedName": "clearAllData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18StroeerSDK_Consent0aC7ManagerP12clearAllDatayyFZ",
+            "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP12clearAllDatayyFZ",
+            "moduleName": "StroeerSDK_Consent",
+            "genericSig": "<τ_0_0 where τ_0_0 : StroeerSDK_Consent.StroeerConsentManager>",
+            "sugared_genericSig": "<Self where Self : StroeerSDK_Consent.StroeerConsentManager>",
+            "static": true,
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18StroeerSDK_Consent0aC7ManagerP",
+        "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP",
+        "moduleName": "StroeerSDK_Consent",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "StroeerSDK",
+        "printedName": "StroeerSDK",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerConsentManagerFactory",
+        "printedName": "StroeerConsentManagerFactory",
+        "declKind": "Class",
+        "usr": "s:18StroeerSDK_Consent0aC14ManagerFactoryC",
+        "mangledName": "$s18StroeerSDK_Consent0aC14ManagerFactoryC",
+        "moduleName": "StroeerSDK_Consent",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "StroeerSDK",
+        "printedName": "StroeerSDK",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StroeerCustomConsentData",
+        "printedName": "StroeerCustomConsentData",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "vendors",
+            "printedName": "vendors",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvp",
+            "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvg",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvs",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvs",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvM",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC7vendorsSaySSGvM",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "categories",
+            "printedName": "categories",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvp",
+            "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvg",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvs",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvs",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvM",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC10categoriesSaySSGvM",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "legIntCategories",
+            "printedName": "legIntCategories",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvp",
+            "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvp",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvg",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvg",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvs",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvs",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvM",
+                "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC16legIntCategoriesSaySSGvM",
+                "moduleName": "StroeerSDK_Consent",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(vendors:categories:legIntCategories:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerCustomConsentData",
+                "printedName": "StroeerSDK_Consent.StroeerCustomConsentData",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerCustomConsentData"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18StroeerSDK_Consent0a6CustomC4DataC7vendors10categories16legIntCategoriesACSaySSG_A2Gtcfc",
+            "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC7vendors10categories16legIntCategoriesACSaySSG_A2Gtcfc",
+            "moduleName": "StroeerSDK_Consent",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StroeerCustomConsentData",
+                "printedName": "StroeerSDK_Consent.StroeerCustomConsentData",
+                "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerCustomConsentData"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerCustomConsentData(im)init",
+            "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataCACycfc",
+            "moduleName": "StroeerSDK_Consent",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@StroeerSDK_Consent@objc(cs)StroeerCustomConsentData",
+        "mangledName": "$s18StroeerSDK_Consent0a6CustomC4DataC",
+        "moduleName": "StroeerSDK_Consent",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "StroeerSDK",
+        "printedName": "StroeerSDK",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "StroeerSDK",
+        "printedName": "StroeerSDK",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "ConsentViewController",
+        "printedName": "ConsentViewController",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "StroeerSDK",
+        "printedName": "StroeerSDK",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "StroeerSDK_Consent"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SPConsentManager",
+        "printedName": "SPConsentManager",
+        "declKind": "Class",
+        "usr": "c:@M@ConsentViewController@objc(cs)SPConsentManager",
+        "mangledName": "$s21ConsentViewController16SPConsentManagerC",
+        "moduleName": "ConsentViewController",
+        "declAttributes": [
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "StroeerConsentManager",
+            "printedName": "StroeerConsentManager",
+            "usr": "s:18StroeerSDK_Consent0aC7ManagerP",
+            "mangledName": "$s18StroeerSDK_Consent0aC7ManagerP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPSDK",
+            "printedName": "SPSDK",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPSDK",
+            "mangledName": "$s21ConsentViewController5SPSDKP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPCCPA",
+            "printedName": "SPCCPA",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPCCPA",
+            "mangledName": "$s21ConsentViewController6SPCCPAP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPGDPR",
+            "printedName": "SPGDPR",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPGDPR",
+            "mangledName": "$s21ConsentViewController6SPGDPRP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPGLOBALCMP",
+            "printedName": "SPGLOBALCMP",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPGLOBALCMP",
+            "mangledName": "$s21ConsentViewController11SPGLOBALCMPP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPPREFERENCES",
+            "printedName": "SPPREFERENCES",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPPREFERENCES",
+            "mangledName": "$s21ConsentViewController13SPPREFERENCESP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPUSNAT",
+            "printedName": "SPUSNAT",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPUSNAT",
+            "mangledName": "$s21ConsentViewController7SPUSNATP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPMessageUIDelegate",
+            "printedName": "SPMessageUIDelegate",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPMessageUIDelegate",
+            "mangledName": "$s21ConsentViewController19SPMessageUIDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPDelegate",
+            "printedName": "SPDelegate",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPDelegate",
+            "mangledName": "$s21ConsentViewController10SPDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPConsentDelegate",
+            "printedName": "SPConsentDelegate",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPConsentDelegate",
+            "mangledName": "$s21ConsentViewController17SPConsentDelegateP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SPConsentUIDelegate",
+            "printedName": "SPConsentUIDelegate",
+            "usr": "c:@M@ConsentViewController@objc(pl)SPConsentUIDelegate",
+            "mangledName": "$s21ConsentViewController19SPConsentUIDelegateP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/runner\/work\/stroeerSDK-iOS\/stroeerSDK-iOS\/StroeerSDK\/StroeerSDK\/Consent\/Classes\/CustomConsent\/StroeerCustomConsentData.swift",
+      "kind": "Array",
+      "offset": 111,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/stroeerSDK-iOS\/stroeerSDK-iOS\/StroeerSDK\/StroeerSDK\/Consent\/Classes\/CustomConsent\/StroeerCustomConsentData.swift",
+      "kind": "Array",
+      "offset": 152,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/stroeerSDK-iOS\/stroeerSDK-iOS\/StroeerSDK\/StroeerSDK\/Consent\/Classes\/CustomConsent\/StroeerCustomConsentData.swift",
+      "kind": "Array",
+      "offset": 199,
+      "length": 2,
+      "value": "[]"
+    }
+  ]
+}

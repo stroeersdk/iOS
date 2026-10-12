@@ -1,0 +1,11 @@
+${PODS_ROOT}/Target Support Files/Pods-ExampleApp-Cocoapods/Pods-ExampleApp-Cocoapods-resources.sh
+${PODS_ROOT}/ConsentViewController/ConsentViewController/Assets/images/Barcode.png
+${PODS_ROOT}/ConsentViewController/ConsentViewController/Assets/images/SP_Icon.png
+${PODS_ROOT}/ConsentViewController/ConsentViewController/Assets/javascript/jest.config.json
+${PODS_ROOT}/ConsentViewController/ConsentViewController/Assets/javascript/SPJSReceiver.js
+${PODS_ROOT}/ConsentViewController/ConsentViewController/Assets/javascript/SPJSReceiver.spec.js
+${PODS_CONFIGURATION_BUILD_DIR}/ConsentViewController/ConsentViewController.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/GoogleMobileAdsResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/UserMessagingPlatformResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/StroeerSDK/StroeerSDKConsent.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/StroeerSDK/StroeerSDK.bundle

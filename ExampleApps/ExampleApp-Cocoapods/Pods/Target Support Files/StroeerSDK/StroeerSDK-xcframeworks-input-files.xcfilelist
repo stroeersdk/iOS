@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/StroeerSDK/StroeerSDK-xcframeworks.sh
+${PODS_ROOT}/StroeerSDK/stroeer-sdk-1.0.0/StroeerSDK/Frameworks/StroeerSDK_Consent.xcframework
+${PODS_ROOT}/StroeerSDK/stroeer-sdk-1.0.0/StroeerSDK/Frameworks/StroeerSDK.xcframework

@@ -1,0 +1,4 @@
+framework module StroeerSDK_Consent {
+  header "StroeerSDK_Consent-Swift.h"
+  requires objc
+}
