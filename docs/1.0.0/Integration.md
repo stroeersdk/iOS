@@ -61,6 +61,17 @@ The public `StroeerSDK.podspec` contains the Core SDK and the optional Consent i
 
 For Confiant integration, see [Confiant Integration](./Confiant_Integration.md).
 
+#### CocoaPods Build Troubleshooting
+
+If you encounter `Sandbox: rsync deny(1) file-write-create` errors when building your application with CocoaPods, you may need to disable **User Script Sandboxing** in Xcode.
+
+1. Select your application target.
+2. Navigate to **Build Settings → User Script Sandboxing**.
+3. Set the value to **No** (`ENABLE_USER_SCRIPT_SANDBOXING = NO`) for both Debug and Release.
+4. Clean the build folder and rebuild the application.
+
+This setting affects Xcode build scripts and does not change the application's runtime sandbox.
+
 ---
 
 ## SDK Setup

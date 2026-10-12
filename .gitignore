@@ -6,5 +6,8 @@
 .DS_Store
 xcuserdata/
 
+# CocoaPods
+ExampleApp-CocoaPods/Pods/
+
 # Optional for libs
 Package.resolved
