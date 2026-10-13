@@ -9,7 +9,7 @@ Optional modules are available for consent management (CMP) and ad-quality prote
 - [iOS integration guide](docs/1.0.0/Integration.md)
 - [CMP integration guide](docs/1.0.0/CMP_Integration.md)
 - [Confiant integration guide](docs/1.0.0/Confiant_Integration.md)
-- [Example application](ExampleApp)
+- [Example application](../ExampleApps/ExampleApp)
 
 ## Requirements
 
@@ -199,16 +199,21 @@ import StroeerSDK
 
 final class InterstitialViewController: UIViewController, StroeerInterstitialDelegate {
 
-    private lazy var interstitial = StroeerInterstitialView(
-        adSlotId: "AD_SLOT_ID",
-        publisherDelegate: self
-    )
+    private var interstitial: StroeerInterstitialView?
 
     func loadInterstitial() {
+        let interstitial = StroeerInterstitialView(
+            adSlotId: "PUBLISHER_CALL_STRING",
+            publisherDelegate: self
+        )
+
+        self.interstitial = interstitial
         interstitial.load()
     }
 
     func onAdLoaded(interstitial: StroeerInterstitialView) {
+        print("Interstitial loaded")
+
         interstitial.show(viewController: self)
     }
 
@@ -218,23 +223,27 @@ final class InterstitialViewController: UIViewController, StroeerInterstitialDel
     ) {
         print("Interstitial failed to load: \(error.localizedDescription)")
     }
-
-    func onAdDismissedFullScreenContent(
-        interstitial: StroeerInterstitialView
-    ) {
-        // The interstitial was dismissed.
-    }
 }
 ```
 
 Interstitial loading is also available using Swift concurrency:
 
 ```swift
-do {
-    try await interstitial.loadAsync()
-    interstitial.show(viewController: self)
-} catch {
-    print("Interstitial failed to load: \(error.localizedDescription)")
+func loadInterstitial() async {
+    let interstitial = StroeerInterstitialView(
+        adSlotId: "PUBLISHER_CALL_STRING",
+        publisherDelegate: self
+    )
+
+    self.interstitial = interstitial
+
+    do {
+        try await interstitial.loadAsync()
+
+        interstitial.show(viewController: self)
+    } catch {
+        print("Interstitial failed to load: \(error.localizedDescription)")
+    }
 }
 ```
 
@@ -250,17 +259,23 @@ import StroeerSDK
 
 final class RewardedViewController: UIViewController, StroeerRewardedDelegate {
 
-    private lazy var rewarded = StroeerRewardedView(
-        adSlotId: "AD_SLOT_ID",
-        publisherDelegate: self
-    )
+    private var rewarded: StroeerRewardedView?
 
     func loadRewarded() {
+        let rewarded = StroeerRewardedView(
+            adSlotId: "PUBLISHER_CALL_STRING",
+            publisherDelegate: self
+        )
+
+        self.rewarded = rewarded
         rewarded.load()
     }
 
     func onAdLoaded(rewarded: StroeerRewardedView) {
-        rewarded.show(viewController: self)
+        print("Rewarded ad loaded")
+
+        // The ad is now ready to be presented.
+        // Enable your application's "Watch Ad" button here if required.
     }
 
     func onAdFailedToLoad(
@@ -270,13 +285,10 @@ final class RewardedViewController: UIViewController, StroeerRewardedDelegate {
         print("Rewarded ad failed to load: \(error.localizedDescription)")
     }
 
-    func onUserEarnedReward(
-        rewarded: StroeerRewardedView,
-        amount: NSDecimalNumber,
-        type: String
+    func onAdDismissedFullScreenContent(
+        rewarded: StroeerRewardedView
     ) {
-        // Grant the reward to the user.
-        print("Reward earned: \(amount) \(type)")
+        print("Rewarded ad dismissed")
     }
 }
 ```
@@ -284,11 +296,21 @@ final class RewardedViewController: UIViewController, StroeerRewardedDelegate {
 Rewarded loading is also available using Swift concurrency:
 
 ```swift
-do {
-    try await rewarded.loadAsync()
-    rewarded.show(viewController: self)
-} catch {
-    print("Rewarded ad failed to load: \(error.localizedDescription)")
+func loadRewarded() async {
+    let rewarded = StroeerRewardedView(
+        adSlotId: "PUBLISHER_CALL_STRING",
+        publisherDelegate: self
+    )
+
+    self.rewarded = rewarded
+
+    do {
+        try await rewarded.loadAsync()
+
+        // The rewarded ad is now ready to show.
+    } catch {
+        print("Rewarded ad failed to load: \(error.localizedDescription)")
+    }
 }
 ```
 
@@ -313,7 +335,7 @@ private let consent = StroeerConsent()
 
 The Consent module provides the Ströer wrapper around Sourcepoint CMP functionality.
 
-For consent collection, Privacy Manager, consent callbacks, clearing consent data, and custom consent handling, see the [CMP integration guide](docs/CMP_Integration.md).
+For consent collection, Privacy Manager, consent callbacks, clearing consent data, and custom consent handling, see the [CMP integration guide](docs/1.0.0/CMP_Integration.md).
 
 ## Confiant
 
@@ -334,10 +356,6 @@ ConfiantLoader.shared.initialize(
 )
 ```
 
-The current iOS Confiant integration is wired into the Ströer banner lifecycle.
-
-Publishers do not need to manually mark individual banner views.
-
 When using Confiant, make sure the application target contains:
 
 ```text
@@ -348,11 +366,12 @@ under:
 
 **Build Settings → Other Linker Flags**
 
-For test mode, initialization details, and troubleshooting, see the [Confiant integration guide](docs/Confiant_Integration.md).
+For test mode, initialization details, and troubleshooting, see the [Confiant integration guide](docs/1.0.0/Confiant_Integration.md).
 
 ## Additional integration
 
-For targeting, content URLs, global targeting, CMP configuration, Confiant, debugging, inspection mode, ad lifecycle callbacks, and additional examples, see the [complete iOS integration guide](docs/Integration.md).
+For targeting, content URLs, global targeting, CMP configuration, Confiant, debugging, inspection mode, ad lifecycle callbacks, and additional examples, see the [complete iOS integration guide](docs/1.0.0/Integration.md).
+For targeting, content URLs, global targeting, CMP configuration, Confiant, debugging, inspection mode, ad lifecycle callbacks, and additional examples, see the [complete iOS integration guide](docs/1.0.0/Integration.md).
 
 ## Support
 
