@@ -11,6 +11,9 @@ Optional modules are available for consent management (CMP) and ad-quality prote
 - [Confiant integration guide](docs/1.0.0/Confiant_Integration.md)
 - [Example application](https://github.com/stroeersdk/iOS/tree/main/ExampleApps)
 
+> [!IMPORTANT]
+> The Yieldlove SDK for iOS has been rebranded as **StröerSDK**. The framework name is now `StroeerSDK`, and the SDK is distributed through a new public repository supporting Swift Package Manager and CocoaPods. Please follow the updated installation instructions below.
+
 ## Requirements
 
 - iOS 15.0 or newer
