@@ -436,6 +436,38 @@ banner.load()
 
 ---
 
+### Global Content URL
+
+A content URL can also be set globally to apply across ad requests.
+
+```swift
+Stroeer.setGlobalContentUrl(url: "https://www.stroeer.com")
+```
+
+Set the global content URL before loading ads. Alternatively, use the ad object's `contentUrl` property to supply a URL for an individual ad request.
+
+### Global Custom Targeting
+
+Custom key-value targeting can also be configured globally using `Stroeer.setGlobalCustomTargeting(targeting:)`.
+
+For example:
+
+```swift
+let sampleTargets: [String: [String]] = [
+    "userAge": ["25"],
+    "userInterest": ["sports", "technology", "music"],
+    "userLocation": ["New York"]
+]
+
+Stroeer.setGlobalCustomTargeting(targeting: sampleTargets)
+```
+
+Global custom targeting applies across ad requests and supports multiple values per key.
+
+Use the ad object's `customTargeting` property to provide targeting specific to an individual ad request.
+
+---
+
 # Ad Lifecycle Callbacks
 
 The SDK exposes publisher delegates for receiving ad lifecycle events.
@@ -520,7 +552,7 @@ The actual `APPLICATION_NAME` and `PUBLISHER_CALL_STRING` values are provided by
 
 # Additional Documentation
 
-- [Example App](../ExampleApps/ExampleApp)
+- [Example App](https://github.com/stroeersdk/iOS/tree/main/ExampleApps)
 - [CMP Integration](./CMP_Integration.md)
 - [Confiant Integration](./Confiant_Integration.md)
 

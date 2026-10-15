@@ -9,7 +9,7 @@ Optional modules are available for consent management (CMP) and ad-quality prote
 - [iOS integration guide](docs/1.0.0/Integration.md)
 - [CMP integration guide](docs/1.0.0/CMP_Integration.md)
 - [Confiant integration guide](docs/1.0.0/Confiant_Integration.md)
-- [Example application](../ExampleApps/ExampleApp)
+- [Example application](https://github.com/stroeersdk/iOS/tree/main/ExampleApps)
 
 ## Requirements
 
