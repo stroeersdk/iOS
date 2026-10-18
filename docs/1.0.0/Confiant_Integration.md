@@ -267,7 +267,7 @@ ConfiantLoader.shared.initialize(
 
 > **Important:** Test mode must never be enabled in production.
 
-Confiant test mode intentionally causes advertisements to be treated as blocked so that the integration can be verified. :chatgpt-content-reference{index="2"}
+Confiant test mode intentionally causes advertisements to be treated as blocked so that the integration can be verified.
 
 Remove:
 

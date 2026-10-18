@@ -425,7 +425,7 @@ final class ViewController: UIViewController {
 
 The Ströer iOS example application contains a working CMP integration:
 
-https://github.com/stroeersdk/iOS/tree/main/ExampleApps/ExampleApp
+[Example App](https://github.com/stroeersdk/iOS/tree/main/ExampleApps/)
 
 It demonstrates:
 
