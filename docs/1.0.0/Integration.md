@@ -93,6 +93,24 @@ Stroeer.setup(appName: "my-app-name")
 
 Ad requests can then be created using the publisher call strings configured for the application.
 
+### Testing Configuration
+
+The following test configuration for integration before production identifiers are available:
+
+| Setting | Test value |
+| --- | --- |
+| Application name | `appDfpTest` |
+| Banner ad slot | `banner` |
+| Large banner ad slot | `banner?large` |
+| Interstitial ad slot | `interstitial` |
+| Rewarded ad slot | `rewarded` |
+
+Check with Ströer that these test slots are available for your SDK version before relying on them.
+
+### Configuration Caching
+
+The SDK caches downloaded application configuration locally to reduce network requests and refreshes it according to the configured interval. If you change `APPLICATION_NAME` during testing and still see stale configuration, reinstalling the test app clears its locally cached data.
+
 ---
 
 # Banner Ads
@@ -164,6 +182,14 @@ print("height: \(size.height)")
 
 Applications with dynamic layouts can use this value to update the surrounding layout if required.
 
+Depending on the publisher configuration, a banner placement can have one fixed size (1:1) or several possible sizes (1:N). For placements with multiple sizes, use `getBannerSize()` after the ad loads to determine the size actually returned.
+
+### Configured ad sizes (`getAdSizes`)
+
+Use `getAdSizes(adSlotId:completion:)` to retrieve the sizes configured for a banner placement. The completion handler provides an array of configured ad sizes and an optional error. This can help determine the layout for a placement with a fixed size (1:1).
+
+For placements that support multiple sizes (1:N), use `getBannerSize()` **after the ad has loaded** to obtain the size actually returned. `getAdSizes()` returns the placement's configured sizes, whereas `getBannerSize()` returns the loaded banner's rendered size.
+
 ## Refreshing a Banner
 
 A banner can be refreshed manually using:
@@ -172,7 +198,7 @@ A banner can be refreshed manually using:
 bannerView.refresh()
 ```
 
-If auto-refresh is enabled for the placement in the Ströer configuration, the SDK manages its refresh cycle automatically.
+If auto-refresh is enabled for the placement in the Ströer configuration, the SDK manages its refresh cycle automatically. The `bannerViewDidReceiveAd(_:)` delegate may be called again for refreshed ads; add the banner to the view hierarchy only once, rather than on every callback.
 
 ## Destroying a Banner
 
@@ -387,6 +413,8 @@ Stroeer.setGlobalContentUrl(url: "https://www.stroeer.com")
 
 Set the global content URL before loading ads. Alternatively, use the ad object's `contentUrl` property to supply a URL for an individual ad request.
 
+Providing a relevant content URL is recommended for contextual targeting, including when user-level identifiers are unavailable. Only pass content data that is appropriate under your application's privacy and consent requirements.
+
 ---
 
 # Custom Targeting
@@ -436,7 +464,7 @@ Stroeer.setGlobalCustomTargeting(targeting: sampleTargets)
 
 Global custom targeting applies across ad requests and supports multiple values per key.
 
-Use the ad object's `customTargeting` property to provide targeting specific to an individual ad request.
+Use the ad object's `customTargeting` property to provide targeting specific to an individual ad request. Configure global values early in the application lifecycle. When the same key is set globally and for an individual ad, the ad-level value takes precedence.
 
 ---
 
@@ -463,6 +491,40 @@ view.addSubview(banner)
 
 banner.load()
 ```
+
+---
+
+# ID5 Integration
+
+ID5 is optional and disabled by default. Contact your Ströer account manager to enable it for your application. Once enabled, basic ID5 integration requires no additional application code.
+
+ID5 must only be used when the necessary user consent has been obtained. If the user opts out of ID5 in their privacy settings, the SDK will not use ID5.
+
+For improved identification, you can optionally provide user information such as email, phone number, publisher user ID, region code, and city code:
+
+```swift
+var customInfo = IdentityCustomInfo()
+customInfo.email = "user@example.com"
+customInfo.phone = "+123456789"
+customInfo.puid = "PUBLISHER_USER_ID"
+customInfo.regionCode = "US-NY"
+customInfo.cityCode = "USNYC"
+IdentityManager.shared.setCustomInfo(customInfo)
+```
+
+All fields are optional. Use ISO 3166-2 for region codes and UN/LOCODE for city codes. Supply information before SDK setup where possible, and only when permitted by your consent and privacy configuration.
+
+---
+
+# Debug Mode
+
+Debug mode provides additional information for troubleshooting ad integration. Enable it before SDK setup:
+
+```swift
+Stroeer.enableDebugMode()
+```
+
+Use debug mode during development only. Restart the app to leave debug mode.
 
 ---
 

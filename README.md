@@ -373,8 +373,7 @@ For test mode, initialization details, and troubleshooting, see the [Confiant in
 
 ## Additional integration
 
-For targeting, content URLs, global targeting, CMP configuration, Confiant, debugging, inspection mode, ad lifecycle callbacks, and additional examples, see the [complete iOS integration guide](docs/1.0.0/Integration.md).
-For targeting, content URLs, global targeting, CMP configuration, Confiant, debugging, inspection mode, ad lifecycle callbacks, and additional examples, see the [complete iOS integration guide](docs/1.0.0/Integration.md).
+For testing configuration, ID5, configuration caching, banner sizes, targeting, debugging, ad lifecycle callbacks, and additional examples, see the [complete iOS integration guide](docs/1.0.0/Integration.md).
 
 ## Support
 

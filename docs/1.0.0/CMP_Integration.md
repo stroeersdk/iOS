@@ -185,6 +185,25 @@ Whether a consent message is actually displayed depends on the Sourcepoint confi
 
 For example, if the user has already provided valid consent, Sourcepoint may complete the flow without displaying the consent message again.
 
+### Optional consent settings
+
+Use `StroeerConsentOptions` to select a consent language or pass an authentication ID when collecting consent:
+
+```swift
+let options = StroeerConsentOptions()
+options.language = .German
+// Optional: use a stable authentication ID only when required.
+// options.authId = "YOUR_AUTH_ID"
+
+consent.collect(
+    viewController: self,
+    delegate: consentDelegate,
+    options: options
+)
+```
+
+Authenticated consent through `authId` is available for `collect()`. Providing `authId` to `showPrivacyManager()` does not enable the authenticated consent flow.
+
 ---
 
 ## SwiftUI
@@ -235,6 +254,23 @@ For example, this can be connected to a Privacy Settings button:
 
 The Privacy Manager configuration, including its identifier and available choices, is supplied through the Ströer configuration.
 
+### PUR and other consent layers
+
+To display a PUR or another configured consent layer, set the `variant` property of `StroeerConsentOptions`:
+
+```swift
+let options = StroeerConsentOptions()
+options.variant = "YOUR_CONFIGURED_VARIANT"
+
+consent.showPrivacyManager(
+    viewController: self,
+    delegate: consentDelegate,
+    options: options
+)
+```
+
+Use the variant value provided by your Ströer account manager. The `variant` option can be passed to either `collect()` or `showPrivacyManager()`.
+
 ---
 
 ## Clear consent data
@@ -250,6 +286,28 @@ consent.clearConsentData(
 After clearing consent data, the next consent collection may show the consent message again depending on the Sourcepoint configuration.
 
 Do not automatically clear consent during normal application startup.
+
+### Custom consent for non-IAB vendors and purposes
+
+Use `customConsentTo` to grant consent for **custom** vendors, categories, and legitimate-interest categories. For IAB vendors and purposes, consent must still be obtained through the consent message or Privacy Manager.
+
+```swift
+let customConsentData = StroeerCustomConsentData(
+    vendors: ["customVendor"],
+    categories: ["customCategory"],
+    legIntCategories: []
+)
+
+consent.customConsentTo(
+    customConsentData: customConsentData,
+    completionHandler: { gdprConsent in
+        // Handle the updated consent.
+    },
+    delegate: consentDelegate
+)
+```
+
+This operation is asynchronous. The completion handler returns the updated `SPGDPRConsent`.
 
 ---
 
@@ -283,6 +341,8 @@ consent.collect(...)
 ```
 
 The exact callbacks received depend on the Sourcepoint flow and whether a consent message needs to be displayed.
+
+Sourcepoint also manages the consent information (including the TCF consent string, where applicable) according to the publisher's CMP configuration. Read the resulting data through the consent callbacks or the standard consent storage used by your integration.
 
 ---
 
