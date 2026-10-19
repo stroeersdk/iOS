@@ -555,3 +555,4 @@ The actual `APPLICATION_NAME` and `PUBLISHER_CALL_STRING` values are provided by
 - [Confiant Integration](./Confiant_Integration.md)
 
 For questions about your application configuration, publisher call strings, or available ad placements, please contact your Ströer account manager.
+[-!-]
