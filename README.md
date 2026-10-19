@@ -379,5 +379,3 @@ For targeting, content URLs, global targeting, CMP configuration, Confiant, debu
 ## Support
 
 For onboarding details, production configuration, publisher ad-slot IDs, Confiant property IDs, CMP configuration, or integration support, contact your Ströer account manager.
-
-[-!-]
