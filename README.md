@@ -9,7 +9,7 @@ Optional modules are available for consent management (CMP) and ad-quality prote
 - [iOS integration guide](docs/1.0.0/Integration.md)
 - [CMP integration guide](docs/1.0.0/CMP_Integration.md)
 - [Confiant integration guide](docs/1.0.0/Confiant_Integration.md)
-- [Example application](https://github.com/stroeersdk/iOS/tree/main/ExampleApps/)
+- [Example application](https://github.com/stroeersdk/iOS/tree/main/ExampleApps)
 
 > [!IMPORTANT]
 > The Yieldlove SDK for iOS has been rebranded as **StröerSDK**. The framework name is now `StroeerSDK`, and the SDK is distributed through a new public repository supporting Swift Package Manager and CocoaPods. Please follow the updated installation instructions below.
@@ -380,3 +380,4 @@ For targeting, content URLs, global targeting, CMP configuration, Confiant, debu
 
 For onboarding details, production configuration, publisher ad-slot IDs, Confiant property IDs, CMP configuration, or integration support, contact your Ströer account manager.
 
+[-!-]
